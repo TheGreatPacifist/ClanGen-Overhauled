@@ -607,6 +607,218 @@
         ]
     },
     {
+	    "patrol_id": "sea_cats_fluff",
+	    "biome": ["beach"],
+	    "season": ["any"],
+	    "types": ["border"],
+	    "tags": [],
+	    "patrol_art": "gen_bord_trackrogue",
+	    "patrol_art_clean": null,
+	    "min_cats": 2,
+	    "max_cats": 6,
+	    "min_max_status": {},
+	    "weight": 20,
+	    "chance_of_success": 60,
+	    "intro_text": "The patrol hears beautiful singing coming from the ocean and it sounds like other cats?",
+	    "decline_text": "p_l tells the rest of the patrol to ignore the singing, just in case.",
+	    "success_outcomes": [
+            {
+	            "text": "r_c approaches the water cats, distracted by the beautiful singing but is suddenly snapped out of it when {PRONOUN/r_c/subject} are greeted by the taste of saltwater.",
+	            "exp": 7,
+                "weight": 20,
+	            "dead_cats": [],
+	            "outsider_rep": null,
+	            "other_clan_rep": null,
+	            "injury": [
+                    {
+			"cats": ["r_c"],
+			"injuries": ["battle_injury", "water in their lungs"],
+			"scars": ["BRIDGE"]
+                    }
+               ],
+	"history_text": {
+		"scars": "m_c was scarred in a fight with sirens",
+		"reg_death": "m_c was drowned by sirens.",
+		"lead_death": "{VERB/m_c/were/was} drowned by sirens"
+	       },
+	"relationships": [
+            {
+			"cats_to": ["r_c"],
+			"cats_from": ["clan"],
+			"mutual": false,
+			"values": ["respect"],
+			"amount": -5
+            },	
+            {
+			"cats_to": ["r_c"],
+			"cats_from": ["clan"],
+			"mutual": false,
+			"values": ["dislike"],
+			"amount": 5
+		}
+             ],
+        "art": "gen_bord_trackrogue",
+        "art_clean": "gen_bord_trackrogue"
+                },
+             {
+	"text": "p_l approaches the mercats, having a lovely conversation with them before heading back to camp.",
+	"exp": 5,
+        "weight": 20,
+	"dead_cats": [],
+	"outsider_rep": null,
+	"other_clan_rep": null,
+	"relationships": [
+            {
+			"cats_to": ["p_l"],
+			"cats_from": ["patrol"],
+			"mutual": false,
+			"values": ["respect"],
+			"amount": 5
+            },	
+            {
+			"cats_to": [],
+			"cats_from": [],
+			"mutual": false,
+			"values": [],
+			"amount": 5
+		}
+             ],
+        "art": "gen_bord_trackrogue",
+        "art_clean": "gen_bord_trackrogue"
+		}
+	],
+	"fail_outcomes": [
+            {
+	"text": "p_l trots up to the waters, not expecting to come face to face with a pack of sirens! In the chaos, r_c gets badly injured in the chaos and the patrol has to rush back to camp, no time to grieve their fallen Clanmates.",
+	"exp": 1,
+        "weight": 20,
+	"dead_cats": ["multi"],
+	"outsider_rep": null,
+	"other_clan_rep": null,
+	"injury": [
+                    {
+			"cats": ["r_c"],
+			"injuries": ["battle_injury", "water in their lungs"],
+			"scars": ["BRIDGE"]
+                    },
+                    {
+			"cats": ["r_c"],
+			"injuries": ["battle_injury", "water in their lungs"],
+			"scars": ["BRIDGE"]
+                    }
+               ],
+	"history_text": {
+		"scars": "m_c was scarred in a fight with sirens",
+		"reg_death": "m_c was drowned by sirens.",
+		"lead_death": "{VERB/m_c/were/was} drowned by sirens"
+	       },
+	"relationships": [
+            {
+			"cats_to": ["patrol"],
+			"cats_from": ["clan"],
+			"mutual": false,
+			"values": ["dislike"],
+			"amount": 5
+            }
+             ],
+        "art": "gen_bord_trackrogue",
+        "art_clean": "gen_bord_trackrogue"
+                },
+            {
+	"text": "r_c does not expect the beautiful sea cats to be dangerous, but p_l's eyes narrow as {PRONOUN/p_l/subject} realizes exactly what's going on, sacrificing {PRONOUN/p_l/self} for r_c, pulling r_c back to shore at the last moment.",
+	"exp": 2,
+        "weight": 20,
+	"dead_cats": ["p_l"],
+	"outsider_rep": null,
+	"other_clan_rep": null,
+	"injury": [
+                    {
+			"cats": ["r_c"],
+			"injuries": ["battle_injury", "water in their lungs"],
+			"scars": ["BRIDGE"]
+                    }
+               ],
+	"history_text": {
+		"scars": "m_c was scarred in a fight with sirens",
+		"reg_death": "m_c was drowned by sirens.",
+		"lead_death": "{VERB/m_c/were/was} drowned by sirens"
+	       },
+	"relationships": [
+            {
+			"cats_to": ["p_l"],
+			"cats_from": ["patrol"],
+			"mutual": false,
+			"values": ["trust"],
+			"amount": -5
+            },	
+            {
+			"cats_to": ["r_c"],
+			"cats_from": ["patrol"],
+			"mutual": false,
+			"values": ["dislike"],
+			"amount": 5
+		}
+             ],
+        "art": "gen_bord_trackrogue",
+        "art_clean": "gen_bord_trackrogue"
+                }
+	],
+	"antag_success_outcomes": [
+            {
+	"text": "p_l hisses at the sirens, who leap back down into the water.",
+	"exp": 1,
+        "weight": 20,
+	"dead_cats": ["multi"],
+	"outsider_rep": null,
+	"other_clan_rep": null,
+	"relationships": [
+            {
+			"cats_to": ["patrol"],
+			"cats_from": ["clan"],
+			"mutual": false,
+			"values": ["dislike"],
+			"amount": 5
+            }
+             ],
+        "art": "gen_bord_trackrogue",
+        "art_clean": "gen_bord_trackrogue"
+                }
+	],
+	"antag_fail_outcomes": [
+            {
+	"text": "r_c hisses at the mercats, yowling at how they are fish brained sirens! One of the mercats takes offense and pounces on r_c, spitting in {PRONOUN/r_c/poss} face before heading back to the waters.",
+	"exp": 1,
+        "weight": 20,
+	"dead_cats": [],
+	"outsider_rep": null,
+	"other_clan_rep": null,
+	"injury": [
+                    {
+			"cats": ["r_c"],
+			"injuries": ["battle_injury"],
+			"scars": ["BRIDGE"]
+                    }
+               ],
+	"history_text": {
+		"scars": "m_c was scarred when {PRONOUN/m_c/subject} angered some mercats.",
+		"reg_death": "m_c was injured following a fight with mercats",
+		"lead_death": "{VERB/m_c/were/was} slain by mercats"
+	       },
+	"relationships": [
+            {
+			"cats_to": ["r_c"],
+			"cats_from": ["patrol"],
+			"mutual": false,
+			"values": ["dislike"],
+			"amount": 5
+            }
+             ],
+        "art": "gen_bord_trackrogue",
+        "art_clean": "gen_bord_trackrogue"
+                }
+	]
+    },
+    {
         "patrol_id": "bch_bord_trackrogue1",
         "biome": ["beach"],
         "season": ["any"],
