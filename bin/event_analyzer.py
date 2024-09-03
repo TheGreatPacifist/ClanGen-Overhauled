@@ -1075,6 +1075,10 @@ history_scarrable = [
     "broken jaw",
     "broken back",
     "broken bone",
+    "broken tail",
+    "broken wrist",
+    "broken leg",
+    "broken rib"
 ]
 history_lethal = []
 all_history = []

@@ -117,5 +117,35 @@
                 "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after falling from a tall cliff."
         }
         ]
-    }    
+    },
+    {
+        "event_id": "mtn_injury_brokenrib_anyany1",
+        "location": ["mountainous"],
+        "season": ["any"],
+        "weight": 30,
+        "event_text": "m_c was going for a walk, taking in the fresh mountain air, when a rumbling greeted {PRONOUN/m_c/poss} ears. Before {PRONOUN/m_c/subject} could react, a tumbling mass of debris struck {PRONOUN/m_c/subject} head-on. m_c woke up in the Medicine Den later that day, with {PRONOUN/m_c/poss} side aching.",
+        "m_c": {
+            "age": [
+                "adolescent",
+                "young adult",
+                "adult",
+                "senior adult",
+                "senior"
+            ]
+        },
+        "injury": [
+            {
+                "cats": ["m_c"],
+                "injuries": ["broken rib"],
+                "scars": ["SIDE"]
+            }
+        ],
+        "history": [
+            {
+                "cats": ["m_c"],
+                "scar": "m_c was scarred after a landslide broke one of {PRONOUN/m_c/poss} ribs.",
+                "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after being struck by a landslide."
+            }
+        ]
+    }
 ]

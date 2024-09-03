@@ -1497,6 +1497,28 @@
                     }
                 ],
                 "prey": ["very_small"]
+            },
+            {
+                "text": "The patrol fans out, some cats climbing, some staying on the ground. The hunt comes to an abrupt end, however, when r_c yowls in fear as {PRONOUN/r_c/subject} {VERB/r_c/plummet/plummets} from the branches and land heavily on the ground. {PRONOUN/r_c/poss/CAP} Clanmates help {PRONOUN/r_c/object} home and settle {PRONOUN/r_c/object} into the medicine cat's den, guilt and regret prickling at them for pursuing such a foolhardy hunt.",
+                "exp": 0,
+                "weight": 10,
+                "injury": [
+                    {
+                        "cats": ["r_c"],
+                        "injuries": ["broken leg"],
+                        "scars": []
+                    }
+                ],
+                "relationships": [
+                    {
+                        "cats_to": ["patrol"],
+                        "cats_from": ["patrol"],
+                        "mutual": false,
+                        "values": ["platonic", "respect", "trust"],
+                        "amount": -5
+                    }
+                ],
+                "prey": ["very_small"]
             }
         ]
     },
@@ -3793,6 +3815,19 @@
                 "text": "Today is just not their day.",
                 "exp": 0,
                 "weight": 20,
+                "prey": ["very_small"]
+            },
+            {
+                "text": "The two make their way out into a patch of scraggly forest, where a mouse catches their attention. r_c crouches down, and springs out for the kill, but lands on {PRONOUN/m_c/poss} badly. With a yowl of pain, its clear that something is wrong. {PRONOUN/r_c/subject/CAP} are helped back to camp by {PRONOUN/r_c/poss} sibling.",
+                "exp": 0,
+                "weight": 30,
+                "injury": [
+                    {
+                        "cats": ["r_c"],
+                        "injuries": ["broken wrist"],
+                        "scars": []
+                    }
+                 ],
                 "prey": ["very_small"]
             },
             {

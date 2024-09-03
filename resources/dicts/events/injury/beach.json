@@ -448,5 +448,30 @@
                 "reg_death": "m_c died from water-inhalation after being dragged out to sea."
             }
         ]
-    }    
+    },
+    {
+        "event_id": "bch_injury_brokenwrist_anykit1",
+        "location": ["beach"],
+        "season": ["any"],
+        "weight": 30,
+        "event_text": "m_c sneaks out one day, ready to discover the wonders of the beach! Instead, {PRONOUN/m_c/subject} return to camp with a broken wrist, having taken quite the tumble off of the rocky coast.",
+        "m_c": {
+            "status": ["kitten"],
+            "trait": ["daring", "impulsive", "troublesome"]
+        },
+        "injury": [
+            {
+                "cats": ["m_c"],
+                "injuries": ["broken wrist"],
+                "scars": ["TOETRAP"]
+            }
+        ],
+        "history": [
+        {
+            "cats": ["m_c"],
+            "scar": "m_c was scarred as a kit, when {PRONOUN/m_c/subject} broke {PRONOUN/m_c/poss} wrist.",
+            "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after breaking {PRONOUN/m_c/poss} wrist on the beach rocks."
+        }
+        ]
+    }
 ]

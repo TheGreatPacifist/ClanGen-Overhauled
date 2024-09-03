@@ -7214,5 +7214,220 @@
                 "adjust": "reduce_eighth"
             }
         ]
+    },
+    {
+        "event_id": "gen_injury_brokentail_anyapprentice1",
+        "location": [
+            "any"
+        ],
+        "season": [ 
+            "any" 
+        ],
+        "weight": 30,
+        "event_text": "The Thunderpath has always been a curious thing to m_c. In the dead of night, {PRONOUN/m_c/subject} slip out of {PRONOUN/m_c/poss} den, creeping onto the hard black stone. {PRONOUN/m_c/subject/CAP} barely has the time to spring out of the way as a monsters glowing eyes illuminate the trail, and when the dust settles, m_c realizes {PRONOUN/m_c/poss} tail was run over by the beast.",
+        "m_c": {
+            "status": ["apprentice"],
+            "trait": [ "ambitious", "daring", "confident"]
+        },
+        "injury": [
+            {
+                "cats": [ "m_c" ], 
+                "injuries": [ "broken tail" ],
+                "scars": ["MANTAIL"]
+            }
+        ],
+        "history": [
+            {
+                "cats": ["m_c"],
+                "scar": "m_c's tail was scarred by a monster.",
+                "reg_death": "curiousity killed m_c when {PRONOUN/m_c/subject} got too close to the Thunderpath, and {PRONOUN/m_c/subject} couldn't survive {PRONOUN/m_c/poss} wounds."
+            }
+        ]
+    },
+    {
+        "event_id": "gen_injury_brokentail_anyapprentice2",
+        "location": [
+            "any"
+        ],
+        "season": [ 
+            "any" 
+        ],
+        "weight": 30,
+        "event_text": "During battle training, m_c accidentally steps on {PRONOUN/m_c/poss} own tail, crunching the bones against a rock.",
+        "m_c": {
+            "status": ["apprentice"],
+            "trait": [ "ambitious", "daring", "confident"]
+        },
+        "injury": [
+            {
+                "cats": [ "m_c" ], 
+                "injuries": [ "broken tail" ],
+                "scars": ["MANTAIL"]
+            }
+        ],
+        "history": [
+            {
+                "cats": ["m_c"],
+                "scar": "m_c's tail was scarred after being broken during training..",
+                "reg_death": "m_c died due to {PRONOUN/m_c/poss} wounds after a training accident broke {PRONOUN/m_c/poss} tail."
+            }
+        ]
+    },
+    {
+        "event_id": "gen_injury_brokentail_anyapprentice2",
+        "location": [
+            "any"
+        ],
+        "season": [ 
+            "any" 
+        ],
+        "weight": 30,
+        "event_text": "While out on a walk, m_c slips on some rocks, tripping on the unstable surface. {PRONOUN/m_c/subject/CAP} realize with fear that {PRONOUN/m_c/poss} tail has been trapped between the boulders, and after a while of wriggling, {PRONOUN/m_c/subject} escape with only {PRONOUN/m_c/poss} tail broken.",
+        "m_c": {
+            "age": [
+                "adolescent",
+                "young adult",
+                "adult",
+                "senior adult",
+                "senior"
+            ]
+        },
+        "injury": [
+            {
+                "cats": [ "m_c" ], 
+                "injuries": [ "broken tail" ],
+                "scars": ["MANTAIL"]
+            }
+        ],
+        "history": [
+            {
+                "cats": ["m_c"],
+                "scar": "m_c's tail was scarred after being broken underneath unstable boulders.",
+                "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after {PRONOUN/m_c/poss} tail was broken by unstable boulders."
+            }
+        ]
+    },
+    {
+        "event_id": "gen_injury_brokenleg_anymultiage1",
+        "location": [
+            "any"
+        ],
+        "season": [ 
+            "any" 
+        ],
+        "weight": 30,
+        "event_text": "m_c is going for a peaceful stroll when the strong scent of coyote hits {PRONOUN/m_c/poss} nostrils- Before {PRONOUN/m_c/subject} can react, {PRONOUN/m_c/subject} are attacked by the canid beast. After narrowly escaping, {PRONOUN/m_c/subject} return to camp, leg bent at an odd angle.",
+        "m_c": {
+            "age": [
+                "adolescent",
+                "young adult",
+                "adult",
+                "senior adult",
+                "senior"
+            ]
+        },
+        "injury": [
+            {
+                "cats": [ "m_c" ], 
+                "injuries": [ "broken leg" ],
+                "scars": ["LEGBITE"]
+            }
+        ],
+        "history": [
+            {
+                "cats": ["m_c"],
+                "scar": "m_c's leg was scarred after being broken while escaping a coyote. ",
+                "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after {PRONOUN/m_c/poss} leg was broken while escaping a coyote."
+            }
+        ]
+    },
+    {
+        "event_id": "gen_injury_brokentail_anymultiage2",
+        "location": [
+            "any"
+        ],
+        "season": [ 
+            "any" 
+        ],
+        "weight": 30,
+        "event_text": "m_c was trying to climb a particular tree, when {PRONOUN/m_c/subject} slipped, tail getting briefly caught on a branch behind {PRONOUN/m_c/object} . Luckily, {PRONOUN/m_c/subject} didn’t suffer too bad of an injury, getting away with just a broken tail.",
+        "m_c": {
+            "age": [
+                "young adult",
+                "adult",
+                "senior adult",
+                "senior"
+            ]
+        },
+        "injury": [
+            {
+                "cats": [ "m_c" ], 
+                "injuries": [ "broken tail" ],
+                "scars": ["MANTAIL"]
+            }
+        ],
+        "history": [
+            {
+                "cats": ["m_c"],
+                "scar": "m_c's tail was scarred after being broken while falling from a tree.",
+                "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after {PRONOUN/m_c/poss} tail was broken while falling from a tree."
+            }
+        ]
+    },
+    {
+        "event_id": "gen_injury_brokenrib_anymultiage1",
+        "location": [
+            "any"
+        ],
+        "season": [ 
+            "any" 
+        ],
+        "weight": 30,
+        "event_text": "m_c had been coughing a lot recently due to the dryness of the air, but one particular fit had {PRONOUN/m_c/object} freezing in pain afterwards. It seems that one of {PRONOUN/m_c/poss} ribs was fractured during the hacking.",
+        "m_c": {
+            "age": ["any"]
+        },
+        "injury": [
+            {
+                "cats": [ "m_c" ], 
+                "injuries": [ "broken rib" ],
+                "scars": ["SIDE"]
+            }
+        ],
+        "history": [
+            {
+                "cats": ["m_c"],
+                "scar": "m_c's side was scarred by a broken rib.",
+                "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after {PRONOUN/m_c/poss} rib broke."
+            }
+        ]
+    },
+    {
+        "event_id": "gen_injury_brokenwrist_anyany1",
+        "location": [
+            "any"
+        ],
+        "season": [ 
+            "any" 
+        ],
+        "weight": 30,
+        "event_text": "m_c trips over a rock, landing at an odd angle. {PRONOUN/m_c/subject/CAP} head to the Medicine Den, knowing {PRONOUN/m_c/poss} wrist is likely fractured.",
+        "m_c": {
+            "age": ["any"]
+        },
+        "injury": [
+            {
+                "cats": [ "m_c" ], 
+                "injuries": [ "broken wrist" ],
+                "scars": ["TOETRAP"]
+            }
+        ],
+        "history": [
+            {
+                "cats": ["m_c"],
+                "scar": "m_c's wrist was scarred after being broken. ",
+                "reg_death": "m_c died from {PRONOUN/m_c/poss} wounds after {PRONOUN/m_c/poss} wrist was broken."
+            }
+        ]
     }
 ]

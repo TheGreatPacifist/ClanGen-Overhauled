@@ -83,6 +83,10 @@ class Scar_Events():
         "broken jaw": head_scars,
         "broken back": back_scars,
         "broken bone": bone_scars,
+        "broken leg": bone_scars + leg_scars,
+        "broken wrist": leg_scars,
+        "broken rib": back_scars,
+        "broken tail": tail_scars
     }
 
     @staticmethod

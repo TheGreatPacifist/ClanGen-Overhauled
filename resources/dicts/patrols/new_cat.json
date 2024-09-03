@@ -1237,6 +1237,27 @@
                 "new_cat": [
                     ["meeting", "loner"]
                 ]
+            },
+            {
+                "text": "The patrol quickly springs into action, a few cats leading the loner to safety while the others drove off the dog. When the dust of the battle cleared, r_c was left lying in the dirt, breathing heavily after the dog had rammed itself into {PRONOUN/r_c/poss} side.",
+                "exp": 0,
+                "weight": 25,
+                "injury": [
+                    {
+                        "cats": ["r_c"],
+                        "injuries": ["broken rib"],
+                        "scars": ["SIDE"]
+                    }
+                ],
+                "history_text": {
+                    "scar": "m_c was scarred when a dog broke {PRONOUN/m_c/poss} rib.",
+                    "reg_death": "m_c died from {PRONOUN/m_c/poss} injuries after a dog broke {PRONOUN/m_c/poss} rib.",
+                    "lead_death": "{VERB/m_c/were/was} attacked by a dog."
+                },
+                "outsider_rep": 1,
+                "new_cat": [
+                    ["meeting", "loner"]
+                ]
             }
         ],
         "antag_fail_outcomes": [

@@ -213,5 +213,29 @@
           "m_c yowls with pain, begging r_c for any relief. The damage to {PRONOUN/m_c/poss} head must have been severe to cause such painful headaches.",
             "m_c can't focus on anything but the searing pain in {PRONOUN/m_c/poss} head. {PRONOUN/m_c/poss/CAP} head injury must have rattled something deep in {PRONOUN/m_c/poss} skull."
         ]
+    },
+    "broken tail": {
+      "an infected wound": [
+        "r_c worriedly inspects m_c's broken tail, noting that it has become infected.",
+        "m_c can feel the heat radiating off of {PRONOUN/m_c/poss} broken tail, knowing infection has set in."
+      ]
+    },
+    "broken wrist": {
+      "an infected wound": [
+        "r_c's pelt bristles as {PRONOUN/r_c/subject} change the poultice on m_c's tail injury, rushing off to grab herbs to fight off {PRONOUN/r_c/poss} patients new infection.",
+        "Even m_c knows this fever isn't normal. {PRONOUN/m_c/poss/CAP} broken tail has become infected."
+      ]
+    },
+    "broken leg": {
+      "an infected wound": [
+        "r_c is hit with the scent of infection as {PRONOUN/r_c/subject} enter the Medicine Den, knowing immediately that m_c's wound has become infected.",
+        "m_c trembles in {PRONOUN/m_c/poss} nest, infection-feuled fever keeping {PRONOUN/m_c/object} confined to the Medicine Den."
+      ]
+    },
+    "broken rib": {
+      "an infected wound": [
+        "r_c fusses over {PRONOUN/r_c/poss} patient, taking in the signs of infection with alarm.",
+        "The injured rib seems to be causing more complications than m_c had anticipated, as it has become infected."
+      ]
     }
 }

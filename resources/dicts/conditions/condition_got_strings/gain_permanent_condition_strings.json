@@ -203,5 +203,41 @@
             "m_c tries to keep the disappointment down. Logically, {PRONOUN/m_c/subject} knew this was inevitable. Emotionally, {PRONOUN/m_c/subject} just can't accept that {PRONOUN/m_c/subject}'ll never walk again.",
             "m_c continues to do {PRONOUN/m_c/poss} exercises dutifully, hoping beyond hope that someday it will pay off. For now though, {PRONOUN/m_c/subject} {VERB/m_c/know/knows} this paralysis is {PRONOUN/m_c/poss} new reality."
         ]
+    },
+    "broken tail": {
+        "lost their tail": [
+          "r_c breaks the news to m_c that {PRONOUN/m_c/poss} tail is broken beyond repair. An amputation is a gorey procedure, but at least it'll save m_c some trouble later down the line.",
+          "r_c informs m_c that {PRONOUN/m_c/poss} tail was removed while {PRONOUN/m_c/subject} were unconcious. m_c says that it's actually a relief, and r_c gives {PRONOUN/m_c/object} them some ideas to help with m_c's newfound difficulty to balance.",
+          "m_c knows it was for the best, but {PRONOUN/m_c/subject} can't help but feel upset over {PRONOUN/m_c/poss} missing tail."
+        ]
+    },
+    "broken wrist": {
+        "weak leg": [
+          "m_c lets r_c know one morning during a check in on {PRONOUN/m_c/poss} injured wrist that it's been feeling weak even after treatment. r_c has m_c walk around for a bit while {PRONOUN/r_c/subject} {VERB/r_c/observe/observes}, and r_c ultimately determines that m_c's wrist injury lead to a weakened leg.",
+          "m_c's wrist has been feeling weaker since {PRONOUN/m_c/poss} injury, and {PRONOUN/m_c/subject} tell r_c, who informs {PRONOUN/m_c/object} that it's likely permanent.",
+          "m_c wants to jump for joy at the news that {PRONOUN/m_c/poss} broken wrist is healing, but it almost collapses under the weight of {PRONOUN/m_c/poss} body. It seems that while it mostly healed, m_c's wrist is going to stay weakened for the rest of {PRONOUN/m_c/poss} life."
+        ],
+        "lost a leg": [
+          "r_c carefully feels m_c's wrist, worry in {PRONOUN/r_c/poss} eyes. The bone didn't heal properly, and for fear of further complications, r_c decides it's time to amputate.",
+          "r_c sighs, breaking the news to m_c that {PRONOUN/m_c/poss} wrist is too far gone. r_c will need to amputate it, or it could get a lot worse.",
+          "m_c wakes up in the Medicine Den, coming to learn that {PRONOUN/m_c/poss} leg was amputated due to {PRONOUN/m_c/poss} broken wrist."
+        ]
+    },
+    "broken leg": {
+        "twisted leg": [
+          "r_c makes a concerned noise as {PRONOUN/r_c/subject} unwrap the poultice from m_c's wound, noting that it appeared to have healed twisted.",
+          "Despite the splints and cobwebs binding the injury tightly, m_c's leg still didn't heal correctly. It's likely that {PRONOUN/m_c/subject}'ll always remember the injury through their now twisted leg.",
+          "m_c's leg healed, though improperly. {PRONOUN/m_c/poss/CAP} affected leg is now twisted."
+        ],
+        "weak leg": [
+          "m_c's injury may be visibly gone, but it's clear as {PRONOUN/m_c/subject} try to stand that some things may stay permanent. r_c informs m_c that it's likely that {PRONOUN/m_c/poss} leg will stay weak for the rest of their life.",
+          "r_c watches m_c limp around camp after being cleared from the medicine den, noting that {PRONOUN/m_c/poss} leg, while seemingly healed, was still weakened. r_c breaks the news to m_c later that day.",
+          "m_c notices that {PRONOUN/m_c/poss} leg has been feeling significantly weaker since {PRONOUN/m_c/poss} injury."
+        ],
+        "lost a leg": [
+          "Some fractures are easily healed, r_c tells {PRONOUN/m_c/object}, but not m_c's. r_c decides its time for an amputation.",
+          "r_c feels guilty as {PRONOUN/r_c/subject} look at {PRONOUN/r_c/poss} patient's leg, knowing {PRONOUN/r_c/subject} did all {PRONOUN/r_c/subject} could. m_c's leg was amputated to prevent further complications.",
+          "m_c is upset at losing {PRONOUN/m_c/poss} leg, but {PRONOUN/m_c/subject} know it was for the best. {PRONOUN/m_c/poss/CAP} broken bone was beyond saving."
+        ]
     }
 }
