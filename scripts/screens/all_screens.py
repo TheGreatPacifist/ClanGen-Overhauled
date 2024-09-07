@@ -7,6 +7,7 @@ from .ChooseMentorScreen import ChooseMentorScreen
 from .ClanScreen import ClanScreen
 from .ClanSettingsScreen import ClanSettingsScreen
 from .ClearingScreen import ClearingScreen
+from .BeastiaryScreen import BeastiaryScreen
 from .EventsScreen import EventsScreen
 from .FamilyTreeScreen import FamilyTreeScreen
 from .LeaderDenScreen import LeaderDenScreen
@@ -61,6 +62,7 @@ make_clan_screen = MakeClanScreen('make clan screen')
 
 
 allegiances_screen = AllegiancesScreen('allegiances screen')
+beastiary_screen = BeastiaryScreen('beastiary screen')
 camp_screen = ClanScreen('camp screen')
 catlist_screen = ListScreen('list screen')
 med_den_screen = MedDenScreen('med den screen')

@@ -22,12 +22,12 @@
     "CHOCOLATE": "brown"
   },
   "possible_tints": {
-    "basic": ["pink", "gray", "red", "orange", "none", "warmdilute"],
-    "warm": ["yellow", "purple", "dilute", "cooldilute"],
-    "cool": ["purple", "black", "dilute"],
+    "basic": ["gray","orange", "none", "warmdilute"],
+    "warm": ["pink", "red", "yellow", "purple", "dilute", "cooldilute"],
+    "cool": ["pink", "red", "purple", "black", "dilute"],
     "white": ["yellow"],
-    "monochrome": ["blue", "black", "dilute", "cooldilute"],
-    "brown": ["yellow", "purple", "black", "dilute", "cooldilute"]
+    "monochrome": ["pink", "red", "blue", "black", "dilute", "cooldilute"],
+    "brown": ["pink", "red", "yellow", "purple", "black", "dilute", "cooldilute"]
   },
   "tint_colours":
   {

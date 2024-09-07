@@ -2362,6 +2362,23 @@
             }
         }
     },
+    "#beastiary_button": {
+        "prototype": "#image_button",
+        "images": {
+            "normal_image": {
+                "path": "resources/images/buttons/beastiary.png"
+            },
+            "hovered_image": {
+                "path": "resources/images/buttons/beastiary_hover.png"
+            },
+            "selected_image": {
+                "path": "resources/images/buttons/beastiary_hover.png"
+            },
+            "disabled_image": {
+                "path": "resources/images/buttons/beastiary_unavailable.png"
+            }
+        }
+    },
     "#clan_settings_button": {
         "prototype": "#image_button",
         "images": {

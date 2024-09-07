@@ -199,10 +199,10 @@ class Pelt:
                             "senior adult": adult_sprite if adult_sprite is not None else 0,
                             "senior": senior_sprite if senior_sprite is not None else 0,
                             "para_adult": para_adult_sprite if para_adult_sprite is not None else 0,
-                            'newborn': 20,
-                            'para_young': 17,
-                            "sick_adult": 18,
-                            "sick_young": 19}
+                            'newborn': 38,
+                            'para_young': choice([32, 35]),
+                            "sick_adult": 36,
+                            "sick_young": 37}
 
         self.reverse = reverse
         self.skin = skin
@@ -272,25 +272,37 @@ class Pelt:
             self.eye_colour = "BLUE"
 
         if self.length == 'long':
-            if self.cat_sprites['adult'] not in [9, 10, 11]:
+            if self.cat_sprites['adult'] not in [18, 19, 20, 21, 22, 23]:
                 if self.cat_sprites['adult'] == 0:
-                    self.cat_sprites['adult'] = 9
+                    self.cat_sprites['adult'] = 18
                 elif self.cat_sprites['adult'] == 1:
-                    self.cat_sprites['adult'] = 10
+                    self.cat_sprites['adult'] = 19
                 elif self.cat_sprites['adult'] == 2:
-                    self.cat_sprites['adult'] = 11
+                    self.cat_sprites['adult'] = 20
+                elif self.cat_sprites['adult'] == 3:
+                    self.cat_sprites['adult'] = 21
+                elif self.cat_sprites['adult'] == 4:
+                    self.cat_sprites['adult'] = 22                
+                elif self.cat_sprites['adult'] == 5:
+                    self.cat_sprites['adult'] = 23
                 self.cat_sprites['young adult'] = self.cat_sprites['adult']
                 self.cat_sprites['senior adult'] = self.cat_sprites['adult']
-                self.cat_sprites['para_adult'] = 16
+                self.cat_sprites['para_adult'] = choice([16, 34])
         else:
-            self.cat_sprites['para_adult'] = 15
-        if self.cat_sprites['senior'] not in [12, 13, 14]:
-            if self.cat_sprites['senior'] == 3:
-                self.cat_sprites['senior'] = 12
-            elif self.cat_sprites['senior'] == 4:
-                self.cat_sprites['senior'] = 13
-            elif self.cat_sprites['senior'] == 5:
-                self.cat_sprites['senior'] = 14
+            self.cat_sprites['para_adult'] = choice([15, 33])
+        if self.cat_sprites['senior'] not in [24, 25, 26, 27, 28, 29]:
+            if self.cat_sprites['senior'] == 6:
+                self.cat_sprites['senior'] = 24
+            elif self.cat_sprites['senior'] == 7:
+                self.cat_sprites['senior'] = 25
+            elif self.cat_sprites['senior'] == 8:
+                self.cat_sprites['senior'] = 26
+            elif self.cat_sprites['senior'] == 9:
+                self.cat_sprites['senior'] = 27
+            elif self.cat_sprites['senior'] == 10:
+                self.cat_sprites['senior'] = 28
+            elif self.cat_sprites['senior'] == 11:
+                self.cat_sprites['senior'] = 29
         
         if self.pattern in convert_dict["old_tortie_patches"]:
             old_pattern = self.pattern
@@ -620,23 +632,23 @@ class Pelt:
 
     def init_sprite(self):
         self.cat_sprites = {
-            'newborn': 20,
-            'kitten': random.randint(0, 2),
-            'adolescent': random.randint(3, 5),
-            'senior': random.randint(12, 14),
-            'sick_young': 19,
-            'sick_adult': 18
+            'newborn': 38,
+            'kitten': random.randint(0, 5),
+            'adolescent': random.randint(6, 11),
+            'senior': random.randint(24, 29),
+            'sick_young': 37,
+            'sick_adult': 36
         }
         self.reverse = choice([True, False])
         # skin chances
         self.skin = choice(Pelt.skin_sprites)
 
         if self.length != 'long':
-            self.cat_sprites['adult'] = random.randint(6, 8)
-            self.cat_sprites['para_adult'] = 16
+            self.cat_sprites['adult'] = random.randint(12, 17)
+            self.cat_sprites['para_adult'] = choice([30, 33])
         else:
-            self.cat_sprites['adult'] = random.randint(9, 11)
-            self.cat_sprites['para_adult'] = 15
+            self.cat_sprites['adult'] = random.randint(18, 23)
+            self.cat_sprites['para_adult'] = choice([31, 34])
         self.cat_sprites['young adult'] = self.cat_sprites['adult']
         self.cat_sprites['senior adult'] = self.cat_sprites['adult']
 
@@ -899,7 +911,6 @@ class Pelt:
             color_tints = sprites.cat_tints["possible_tints"][color_group]
         else:
             color_tints = []
-
         if base_tints or color_tints:
             self.tint = choice(base_tints + color_tints)
         else:

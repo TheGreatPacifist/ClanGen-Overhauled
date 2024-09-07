@@ -101,7 +101,7 @@ class Screens():
             starting_height=5
         ),
         "dens_bar": pygame_gui.elements.UIImage(
-            scale(pygame.Rect((80, 120), (20, 320))),
+            scale(pygame.Rect((80, 200), (20, 320))),
             pygame.transform.scale(
                 image_cache.load_image(
                     "resources/images/vertical_bar.png").convert_alpha(),
@@ -111,40 +111,48 @@ class Screens():
             manager=MANAGER,
         ),
         "dens": UIImageButton(
-            scale(pygame.Rect((50, 120), (142, 60))),
+            scale(pygame.Rect((50, 200), (142, 60))),
             "",
             visible=False,
             manager=MANAGER,
             object_id="#dens_button",
             starting_height=6),
+        "beastiary": UIImageButton(
+            scale(pygame.Rect((38, 125), (236, 60))),
+            "",
+            visible=False,
+            manager=MANAGER,
+            object_id="#beastiary_button",
+            starting_height=6),
         "lead_den": UIImageButton(
-            scale(pygame.Rect((50, 200), (224, 56))),
+            scale(pygame.Rect((50, 280), (224, 56))),
             "",
             visible=False,
             manager=MANAGER,
             object_id="#lead_den_button",
             starting_height=6),
         "med_cat_den": UIImageButton(
-            scale(pygame.Rect((50, 280), (302, 56))),
+            scale(pygame.Rect((50, 360), (302, 56))),
             "",
             visible=False,
             manager=MANAGER,
             object_id="#med_den_button",
             starting_height=6),
         "warrior_den": UIImageButton(
-            scale(pygame.Rect((50, 360), (242, 56))),
+            scale(pygame.Rect((50, 440), (242, 56))),
             "",
             visible=False,
             manager=MANAGER,
             object_id="#warrior_den_button",
             starting_height=6),
         "clearing": UIImageButton(
-            scale(pygame.Rect((50, 440), (162, 56))),
+            scale(pygame.Rect((50, 520), (162, 56))),
             "",
             visible=False,
             manager=MANAGER,
             object_id="#clearing_button",
             starting_height=6),
+        
 
         "heading": pygame_gui.elements.UITextBox(
             "",
@@ -322,6 +330,8 @@ class Screens():
             SaveCheck(game.switches['cur_screen'], True, self.menu_buttons["main_menu"])
         elif event.ui_element == self.menu_buttons["allegiances"]:
             self.change_screen('allegiances screen')
+        elif event.ui_element == self.menu_buttons["beastiary"]:
+            self.change_screen('beastiary screen')
         elif event.ui_element == self.menu_buttons["clan_settings"]:
             self.change_screen('clan settings screen')
         elif event.ui_element == self.menu_buttons["moons_n_seasons_arrow"]:
@@ -342,7 +352,7 @@ class Screens():
             self.change_screen('warrior den screen')
 
     def update_dens(self):
-        dens = ["dens_bar", "lead_den", "med_cat_den", "warrior_den", "clearing", ]
+        dens = ["dens_bar", "lead_den", "med_cat_den", "warrior_den", "clearing"]
 
         for den in dens:
             # if dropdown is visible, hide
@@ -367,6 +377,7 @@ class Screens():
                                 manager=MANAGER)})
                     else:
                         self.menu_buttons[den].show()
+ 
 
     def update_heading_text(self, text):
         """Updates the menu heading text"""
