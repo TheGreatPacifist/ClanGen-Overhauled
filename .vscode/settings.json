@@ -35,5 +35,6 @@
         "Twolegs",
         "ujson",
         "verdana"
-    ]
+    ],
+    "files.autoSave": "onWindowChange"
 }
