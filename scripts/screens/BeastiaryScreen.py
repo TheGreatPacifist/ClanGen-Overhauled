@@ -618,70 +618,58 @@ class BeastiaryScreen(Screens):
         self.cat_names = []
         self.cat_buttons = {}
 class Beast:
-    def __init__(
-        self,
-        beast_chosen = None,
-        common_name = None,
-        species_name = None,
-        summary = None,
-        skills_gained = (),
-        facts = None,
-        discovered_beasts = (),
-        all_beasts = (),
-        discovered_status = False):
+    """defines the beast"""
+    common_name = None
+    species_name = None
+    summary = None
+    skills_gained = ()
+    facts = None
+    discovered_beasts = ()
+    all_beasts = ()
+    discovered_status = False
 
-        print("is this in the right spot")
-        self.common_name = common_name
-        self.species_name = species_name
-        self.summary = summary
-        self.skills_gained = skills_gained
-        self.facts = facts
-        self.discovered_beasts = discovered_beasts
-        self.all_beasts = all_beasts
-        self.discovered_status = discovered_status
-
-        if self.common_name is None:
-            self.assign_beast_info(beast_chosen)
+    if common_name is None:
+        Beast.assign_beast_info(BeastiaryScreen.beast_chosen)
     def assign_beast_info(self, beast_chosen):
         print("beast info function activated")
         if beast_chosen is None:
             print("OH NO THERES NO BEAST CHOSEN. OH NO WHAT INFO DO WE ASSIGN??")
         elif beast_chosen == "crow":
-            self.common_name = "crow"
-            self.species_name = "corvid xxx"
-            self.summary = "crows are very crow-like. blalalla"
-            self.skills_gained = ("stuff, " "more stuff, " "and more stuff")
-            self.facts = "crows r veveryvery smart"
-            self.discovered_status = self.beast_assign_discovery()
-            if "crow" not in self.all_beasts:
-                self.all_beasts.append(self.common_name)
+            Beast.common_name = "crow"
+            Beast.species_name = "corvid xxx"
+            Beast.summary = "crows are very crow-like. blalalla"
+            Beast.skills_gained = ("stuff, " "more stuff, " "and more stuff")
+            Beast.facts = "crows r veveryvery smart"
+            Beast.discovered_status = self.beast_assign_discovery()
+            if "crow" not in Beast.all_beasts:
+                Beast.all_beasts.append(Beast.common_name)
             else:
                 pass
         elif beast_chosen == "rabbit":
-            self.common_name = "rabbit"
-            self.species_name = "bunny rabbit species"
-            self.summary = "bunnies are very bunny like"
-            self.skills_gained ("bunny stuff, " "more bunny stuff, " "and more stuff")
-            self.facts = "rabbits hop a lot"
-            self.discovered_status = self.beast_assign_discovery()
-            if "rabbit" not in self.all_beasts:
-                self.all_beasts.append(self.common_name)
+            Beast.common_name = "rabbit"
+            Beast.species_name = "bunny rabbit species"
+            Beast.summary = "bunnies are very bunny like"
+            Beast.skills_gained ("bunny stuff, " "more bunny stuff, " "and more stuff")
+            Beast.facts = "rabbits hop a lot"
+            Beast.discovered_status = Beast.beast_assign_discovery(self)
+            if "rabbit" not in Beast.all_beasts:
+                Beast.all_beasts.append(Beast.common_name)
             else:
                 pass
     def beast_assign_discovery(self):
 
         print("function activated")
-        if self.discovered_status:
-            self.discovered_beasts.append(self.common_name)
+        if Beast.discovered_status:
+            Beast.discovered_beasts.append(Beast.common_name)
         else:
             pass
-        if self.discovered_beasts in self.all_beasts:
+        if Beast.discovered_beasts in Beast.all_beasts:
             print("discovered beasts in all beasts error check confirmed")
         else:
             print("extra discovered beast has been added. something went wrong")
-        if self.all_beasts not in self.discovered_beasts:
+        if Beast.all_beasts not in Beast.discovered_beasts:
             print("this will either signify not all beasts have been discovered OR ... work properly and be that if not discovered,")
             print("then do whatever is in here. eek")
-        return self.discovered_status
+        return Beast.discovered_status
         
 
