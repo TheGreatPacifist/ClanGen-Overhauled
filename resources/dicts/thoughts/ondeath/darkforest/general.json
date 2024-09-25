@@ -12,7 +12,7 @@
         "thoughts": [
             "Is shocked to find {PRONOUN/m_c/self} here and not StarClan",
             "Just can't believe {PRONOUN/m_c/subject} ended up in the Dark Forest. Was StarClan not watching over c_n?",
-            "What happened? {PRONOUN/m_c/poss} was supposed to end up in StarClan, not this cursed place!"
+            "What happened? {PRONOUN/m_c/subject/CAP} {VERB/m_c/were/was} supposed to end up in StarClan, not this cursed place!"
         ],
         "main_skill_constraint": [
             "STAR,1"
