@@ -1,3 +1,5 @@
+import json
+import os
 import pygame
 import pygame_gui
 
@@ -48,6 +50,7 @@ class BeastiaryScreen(Screens):
         self.beast_name = None
         self.current_page = None
         self.beasts = None
+        self.bestiary = None
         self.back_button = None
 
         self.tab_showing = self.in_den_tab
@@ -106,8 +109,9 @@ class BeastiaryScreen(Screens):
 
     def screen_switches(self):
         self.hide_menu_buttons()
-        Beast.assign_beast_info(self, beast_chosen="crow")
-        print(Beast.__init__(self))
+        self.bestiary = Bestiary()
+        self.bestiary.discover_creature(1)
+        print(self.bestiary.entries)
         self.back_button = UIImageButton(
             scale(pygame.Rect((50, 50), (210, 60))),
             "",
@@ -333,6 +337,7 @@ class BeastiaryScreen(Screens):
 
             self.log_title.show()
             self.log_box.show()
+
     def update_beast(self):
 
         self.beast_template = {
@@ -346,7 +351,7 @@ class BeastiaryScreen(Screens):
         self.beast2 = self.beast_template
 
         # get the med cats
-        self.beasts = ["crow", "hermit thrush", "rabbit"]
+        self.beasts = self.bestiary.creatures
 
         if not self.beasts:
             all_pages = []
@@ -378,14 +383,14 @@ class BeastiaryScreen(Screens):
             else:
                 self.last_creature.enable()
 
-        for cat in self.display_med:
+        for beast in self.beasts:
             self.beast = UISpriteButton(
                 scale(pygame.Rect((870, 330), (300, 300))),
-                cat.sprite,
-                cat_object=cat,
+                beast.sprite,
+                cat_object=beast,
                 manager=MANAGER,
             )
-            name = str(self.beast1["main_title"])
+            name = str(beast.common_name)
             short_name = shorten_text_to_fit(name, 275, 30)
             self.beast_name = pygame_gui.elements.ui_label.UILabel(
                 scale(pygame.Rect((1050, 310), (450, 60))),
@@ -400,16 +405,13 @@ class BeastiaryScreen(Screens):
                 line_spacing=1,
                 manager=MANAGER,
             )
-            med_skill = cat.skills.skill_string(short=True)
-            med_exp = f"exp: {cat.experience_level}"
-            med_working = True
-            if cat.not_working():
-                med_working = False
-            if med_working is True:
-                work_status = "This cat can work"
-            else:
-                work_status = "This cat isn't able to work"
-            info_list = [med_skill, med_exp, work_status]
+            beast_skill = beast.skills_gained.skill_string(short=True)
+            beast_locations = beast.locations_found
+            beast_facts = beast.facts
+            beast_difficulty = beast.difficulty
+            beast_danger = beast.danger
+            beast_rarity = beast.rarity
+            info_list = [beast_skill, beast_locations, beast_facts, beast_difficulty, beast_danger, beast_rarity]
             self.beast_info.set_text("<br>".join(info_list))
 
     def update_sick_cats(self):
@@ -605,8 +607,10 @@ class BeastiaryScreen(Screens):
             self.beast.kill()
 
     def chunks(self, L, n):
+        if isinstance(L, dict):
+            L = list(L.items())  # or list(L.values()) or list(L.keys()) depending on your intent
         return [L[x : x + n] for x in range(0, len(L), n)]
-
+    
     def clear_cat_buttons(self):
         for cat in self.cat_buttons:
             self.cat_buttons[cat].kill()
@@ -617,59 +621,93 @@ class BeastiaryScreen(Screens):
 
         self.cat_names = []
         self.cat_buttons = {}
-class Beast:
-    """defines the beast"""
-    common_name = None
-    species_name = None
-    summary = None
-    skills_gained = ()
-    facts = None
-    discovered_beasts = ()
-    all_beasts = ()
-    discovered_status = False
 
-    if common_name is None:
-        Beast.assign_beast_info(BeastiaryScreen.beast_chosen)
-    def assign_beast_info(self, beast_chosen):
-        print("beast info function activated")
-        if beast_chosen is None:
-            print("OH NO THERES NO BEAST CHOSEN. OH NO WHAT INFO DO WE ASSIGN??")
-        elif beast_chosen == "crow":
-            Beast.common_name = "crow"
-            Beast.species_name = "corvid xxx"
-            Beast.summary = "crows are very crow-like. blalalla"
-            Beast.skills_gained = ("stuff, " "more stuff, " "and more stuff")
-            Beast.facts = "crows r veveryvery smart"
-            Beast.discovered_status = self.beast_assign_discovery()
-            if "crow" not in Beast.all_beasts:
-                Beast.all_beasts.append(Beast.common_name)
-            else:
-                pass
-        elif beast_chosen == "rabbit":
-            Beast.common_name = "rabbit"
-            Beast.species_name = "bunny rabbit species"
-            Beast.summary = "bunnies are very bunny like"
-            Beast.skills_gained ("bunny stuff, " "more bunny stuff, " "and more stuff")
-            Beast.facts = "rabbits hop a lot"
-            Beast.discovered_status = Beast.beast_assign_discovery(self)
-            if "rabbit" not in Beast.all_beasts:
-                Beast.all_beasts.append(Beast.common_name)
-            else:
-                pass
-    def beast_assign_discovery(self):
-
-        print("function activated")
-        if Beast.discovered_status:
-            Beast.discovered_beasts.append(Beast.common_name)
-        else:
-            pass
-        if Beast.discovered_beasts in Beast.all_beasts:
-            print("discovered beasts in all beasts error check confirmed")
-        else:
-            print("extra discovered beast has been added. something went wrong")
-        if Beast.all_beasts not in Beast.discovered_beasts:
-            print("this will either signify not all beasts have been discovered OR ... work properly and be that if not discovered,")
-            print("then do whatever is in here. eek")
-        return Beast.discovered_status
+class Creature:
+    """ defines the creature """
+    def __init__(self, data):
+        self.id = data["ID"]
+        self.common_name = data["common_name"]
+        self.species_name = data["species_name"]
+        self.summary = data["summary"]
+        self.skills_gained = data["skills_gained"]
+        self.facts = data["facts"]
+        self.locations_found = data["locations_found"]
+        self.difficulty = data["difficulty"]
+        self.danger = data["danger"]
+        self.rarity = data["rarity"]
+        self.sprite_path = data["sprite_path"]
+        self.sprite = None
         
+        self.load_sprite()
 
+    def load_sprite(self):
+        self.sprite = pygame.image.load(self.sprite_path)
+
+class BestiaryEntry:
+    def __init__(self, creature: Creature):
+        self.creature = creature
+        self.discovered = False
+        self.kills = 0
+
+    def discover(self):
+        self.discovered = True
+        self.kills += 1
+
+    def rediscover(self):
+        self.kills += 1
+
+class Bestiary:
+    def __init__(self, data_path="resources/dicts/bestiary.json", save_path="saves/Test/bestiary.json"):
+        self.data_path = data_path
+        self.save_path = save_path
+        self.creatures = {}
+        self.entries = {}
+        self.load_creatures()
+        self.load_progress()
+
+    def load_creatures(self):
+        with open(self.data_path, "r", encoding="utf-8") as file:
+            data = json.load(file)
+            for creature_data in data["creatures"]:
+                creature = Creature(creature_data)
+                self.creatures[creature.id] = creature
+
+    def load_progress(self):
+        if os.path.exists(self.save_path):
+            with open(self.save_path, 'r', encoding="utf-8") as file:
+                saved_data = json.load(file)
+                for creature_id, data in saved_data.items():
+                    creature = self.creatures.get(creature_id)
+                    if creature:
+                        entry = BestiaryEntry(creature)
+                        entry.discovered = data.get("discovered", False)
+                        entry.kills = data.get("kills", 0)
+                        self.entries[creature_id] = entry
+        # Add Undiscovered Creatures
+        for creature_id, creature in self.creatures.items():
+            if creature_id not in self.entries:
+                self.entries[creature_id] = BestiaryEntry(creature)
+
+    def save_progress(self):
+        data = {
+            creature_id: {
+                "discovered": entry.discovered,
+                "kills": entry.kills
+            }
+            for creature_id, entry in self.entries.items()
+        }
+        with open(self.save_path, "w", encoding="utf-8") as file:
+            json.dump(data, file, indent=2)
+    
+    def discover_creature(self, creature_id):
+        if creature_id in self.entries:
+            entry = self.entries[creature_id]
+            if not entry.discovered:
+                entry.discover()
+                print(f"New Creature Discovered: {entry.creature.common_name}")
+            else:
+                entry.rediscover()
+                print(f"You reincountered {entry.creature.common_name} again")
+
+        else:
+            print(f"Unknown Creature ID: {creature_id}")

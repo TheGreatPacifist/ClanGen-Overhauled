@@ -1,0 +1,30 @@
+{
+    "creatures": [
+        {
+            "ID": 1,
+            "common_name": "crow",
+            "species_name": "corvid",
+            "summary": "Crow Description",
+            "skills_gained": ["skill_1", "skill_2", "skill3"],
+            "facts": "Crows are very smart",
+            "locations_found": ["plains"],
+            "difficulty": 0,
+            "danger": 0,
+            "rarity": "common",
+            "sprite_path": "sprites/prey.png"
+        },
+        {
+            "ID": 2,
+            "common_name": "rabbit",
+            "species_name": "bunny",
+            "summary": "Rabbit Description",
+            "skills_gained": ["skill_1", "skill_2", "skill3"],
+            "facts": "Rabbits hop a lot",
+            "locations_found": [],
+            "difficulty": 0,
+            "danger": 0,
+            "rarity": "uncommon",
+            "sprite_path": "sprites/prey.png"
+        }
+    ]
+}
