@@ -348,9 +348,9 @@ class Pelt:
                     self.cat_sprites['adult'] = 23
                 self.cat_sprites['young adult'] = self.cat_sprites['adult']
                 self.cat_sprites['senior adult'] = self.cat_sprites['adult']
-                self.cat_sprites['para_adult'] = choice([16, 34])
+                self.cat_sprites['para_adult'] = choice([31, 34])
         else:
-            self.cat_sprites['para_adult'] = choice([15, 33])
+            self.cat_sprites['para_adult'] = choice([30, 33])
         if self.cat_sprites['senior'] not in [24, 25, 26, 27, 28, 29]:
             if self.cat_sprites['senior'] == 6:
                 self.cat_sprites['senior'] = 24
