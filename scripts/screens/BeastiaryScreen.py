@@ -1,5 +1,3 @@
-import json
-import os
 import pygame
 import pygame_gui
 
