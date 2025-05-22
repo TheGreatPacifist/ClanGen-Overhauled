@@ -34,6 +34,8 @@ from scripts.cat.names import names
 from scripts.cat.sprites import sprites
 from scripts.game_structure.game_essentials import game
 import scripts.game_structure.screen_settings  # must be done like this to get updates when we change screen size etc
+from scripts.cat.pelts import Pelt
+
 
 if TYPE_CHECKING:
     from scripts.cat.cats import Cat
@@ -2833,10 +2835,9 @@ def generate_sprite(
                     )
 
         # draw accessories
-        from scripts.cat.pelts import Pelt
         if not acc_hidden and cat.pelt.accessory:
             cat_accessories = cat.pelt.accessory
-            categories = ["collars", "tail_accessories", "plant_accessories", "wild_accessories"]
+            categories = ["collars", "tail_accessories", "body_accessories", "head_accessories"]
             for category in categories:
                 for accessory in cat_accessories:
                     if accessory in getattr(Pelt, category):

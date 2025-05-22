@@ -9,6 +9,15 @@ from scripts.game_structure.game_essentials import game
 from scripts.utility import adjust_list_text
 
 
+_scar_details = [
+        "NOTAIL",
+        "HALFTAIL",
+        "NOPAW",
+        "NOLEFTEAR",
+        "NORIGHTEAR",
+        "NOEAR",
+    ]
+
 class Pelt:
     sprites_names = {
         "SingleColour": 'single',
@@ -1162,39 +1171,39 @@ class Pelt:
 
         return color_name
     
-    def _describe_pattern(cat, short=False):
-    color_name = [f"cat.pelts.{str(cat.pelt.colour)}"]
-    pelt_name = f"cat.pelts.{cat.pelt.name}{'' if short else '_long'}"
-    if cat.pelt.name in Pelt.torties:
-        pelt_name, color_name = _describe_torties(cat, color_name, short)
+    def _describe_pattern(self, cat, short=False):
+        color_name = [f"cat.pelts.{str(cat.pelt.colour)}"]
+        pelt_name = f"cat.pelts.{cat.pelt.name}{'' if short else '_long'}"
+        if cat.pelt.name in Pelt.torties:
+            pelt_name, color_name = cat._describe_torties(cat, color_name, short)
 
-    color_name = [i18n.t(piece, count=1) for piece in color_name]
-    color_name = "".join(color_name)
+        color_name = [i18n.t(piece, count=1) for piece in color_name]
+        color_name = "".join(color_name)
 
-    if cat.pelt.white_patches:
-        if cat.pelt.white_patches == "FULLWHITE":
-            # If the cat is fullwhite, discard all other information. They are just white
-            color_name = i18n.t("cat.pelts.FULLWHITE")
-            pelt_name = ""
-        elif cat.pelt.name != "Calico":
-            white = i18n.t("cat.pelts.FULLWHITE")
-            if i18n.t("cat.pelts.WHITE", count=1) in color_name:
-                color_name = white
-            elif cat.pelt.white_patches in Pelt.mostly_white:
-                color_name = adjust_list_text([white, color_name])
-            else:
-                color_name = adjust_list_text([color_name, white])
+        if cat.pelt.white_patches:
+            if cat.pelt.white_patches == "FULLWHITE":
+                # If the cat is fullwhite, discard all other information. They are just white
+                color_name = i18n.t("cat.pelts.FULLWHITE")
+                pelt_name = ""
+            elif cat.pelt.name != "Calico":
+                white = i18n.t("cat.pelts.FULLWHITE")
+                if i18n.t("cat.pelts.WHITE", count=1) in color_name:
+                    color_name = white
+                elif cat.pelt.white_patches in Pelt.mostly_white:
+                    color_name = adjust_list_text([white, color_name])
+                else:
+                    color_name = adjust_list_text([color_name, white])
 
-    if cat.pelt.points:
-        color_name = i18n.t("cat.pelts.point", color=color_name)
-        if "ginger point" in color_name:
-            color_name.replace("ginger point", "flame point")
-            # look, I'm leaving this as a quirk of the english language, if it's a problem elsewhere lmk
+        if cat.pelt.points:
+            color_name = i18n.t("cat.pelts.point", color=color_name)
+            if "ginger point" in color_name:
+                color_name.replace("ginger point", "flame point")
+                # look, I'm leaving this as a quirk of the english language, if it's a problem elsewhere lmk
 
-        return pelt_name, color_name
+            return pelt_name, color_name
 
 
-    def _describe_torties(cat, color_name, short=False) -> [str, str]:
+    def _describe_torties(self, cat, color_name, short=False) -> [str, str]:
         # Calicos and Torties need their own desciptions
         if short:
             # If using short, don't describe the colors of calicos and torties.
@@ -1232,18 +1241,7 @@ class Pelt:
                 base = ""
             return base, color_name
 
-
-    _scar_details = [
-        "NOTAIL",
-        "HALFTAIL",
-        "NOPAW",
-        "NOLEFTEAR",
-        "NORIGHTEAR",
-        "NOEAR",
-    ]
-
-
-    def unpack_appearance_ruleset(cat, rule, short, pelt, color):
+    def unpack_appearance_ruleset(self, cat, rule, short, pelt, color):
         if rule == "scarred":
             if not short and len(cat.pelt.scars) >= 3:
                 return "cat.pelts.scarred"
