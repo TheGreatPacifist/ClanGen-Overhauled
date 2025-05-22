@@ -383,7 +383,7 @@ class BeastiaryScreen(Screens):
             else:
                 self.last_creature.enable()
 
-        for beast in self.beasts:
+        for beast in self.beasts.values():
             self.beast = UISpriteButton(
                 scale(pygame.Rect((870, 330), (300, 300))),
                 beast.sprite,
@@ -405,13 +405,14 @@ class BeastiaryScreen(Screens):
                 line_spacing=1,
                 manager=MANAGER,
             )
-            beast_skill = beast.skills_gained.skill_string(short=True)
+            beast_skill = beast.skills_gained
             beast_locations = beast.locations_found
             beast_facts = beast.facts
             beast_difficulty = beast.difficulty
             beast_danger = beast.danger
             beast_rarity = beast.rarity
             info_list = [beast_skill, beast_locations, beast_facts, beast_difficulty, beast_danger, beast_rarity]
+            info_list = [", ".join(item) if isinstance(item, list) else str(item) for item in info_list]
             self.beast_info.set_text("<br>".join(info_list))
 
     def update_sick_cats(self):
