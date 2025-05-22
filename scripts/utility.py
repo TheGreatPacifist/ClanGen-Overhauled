@@ -2836,7 +2836,7 @@ def generate_sprite(
         from scripts.cat.pelts import Pelt
         if not acc_hidden and cat.pelt.accessory:
             cat_accessories = cat.pelt.accessory
-            categories = ["collars", "tail_accessories", "body_accessories", "head_accessories"]
+            categories = ["collars", "tail_accessories", "plant_accessories", "wild_accessories"]
             for category in categories:
                 for accessory in cat_accessories:
                     if accessory in getattr(Pelt, category):
