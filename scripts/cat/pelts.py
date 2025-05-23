@@ -734,10 +734,11 @@ class Pelt:
             self.scars.remove('HALFTAIL')
 
     def init_accessories(self, age):
+        self.accessory = None
+        """
         if age == "newborn":
             self.accessory = None
             return
-
         acc_display_choice = random.randint(0, 80)
         if age in ['kitten', 'adolescent']:
             acc_display_choice = random.randint(0, 180)
@@ -751,8 +752,10 @@ class Pelt:
             ])
         else:
             self.accessory = None
-
+        """
+            
     def init_pattern(self):
+        """
         if self.name in Pelt.torties:
             if not self.tortiebase:
                 self.tortiebase = choice(Pelt.tortiebases)
@@ -809,6 +812,7 @@ class Pelt:
             self.tortiepattern = None
             self.tortiecolour = None
             self.pattern = None
+        """
 
     def white_patches_inheritance(self, parents: tuple):
 
@@ -939,6 +943,8 @@ class Pelt:
             self.points = None
 
     def init_white_patches(self, pelt_white, parents: tuple):
+        self.white_patches = None
+        """
         # Vit can roll for anyone, not just cats who rolled to have white in their pelt. 
         par_vit = []
         for p in parents:
@@ -960,6 +966,7 @@ class Pelt:
         else:
             self.white_patches = None
             self.points = None
+        """
 
     def init_tint(self):
         """Sets tint for pelt and white patches"""

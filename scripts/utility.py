@@ -2705,6 +2705,7 @@ def generate_sprite(
             else:
                 tortie_pattern = cat.pelt.tortiepattern
 
+            """
             patches = sprites.sprites[
                 tortie_pattern + cat.pelt.tortiecolour + cat_sprite
                 ].copy()
@@ -2716,6 +2717,7 @@ def generate_sprite(
 
             # Add patches onto cat.
             new_sprite.blit(patches, (0, 0))
+            """
 
         # TINTS
         if (
