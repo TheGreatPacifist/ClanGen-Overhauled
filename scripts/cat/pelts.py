@@ -944,7 +944,7 @@ class Pelt:
 
     def init_white_patches(self, pelt_white, parents: tuple):
         self.white_patches = None
-        """
+        
         # Vit can roll for anyone, not just cats who rolled to have white in their pelt. 
         par_vit = []
         for p in parents:
@@ -966,7 +966,7 @@ class Pelt:
         else:
             self.white_patches = None
             self.points = None
-        """
+        
 
     def init_tint(self):
         """Sets tint for pelt and white patches"""
