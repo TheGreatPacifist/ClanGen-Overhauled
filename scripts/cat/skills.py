@@ -120,7 +120,7 @@ class SkillPath(Enum):
             if i not in exclude
         ]
 
-        if not int(random.random() * 15):
+        if not int(random.random() * 16):
             return random.choice(uncommon_paths)
         else:
             common_paths = [
