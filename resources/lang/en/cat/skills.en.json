@@ -124,6 +124,21 @@
         "interested in herbs": "interested in herbs",
         "good with herbs": "good with herbs",
         "nurtures plants": "nurtures plants",
-        "herb tender": "herb tender"
+        "herb tender": "herb tender",
+        "stealthy": "stealthy",
+        "speedy": "speedy",
+        "strength": "strength",
+        "bite": "bite",
+        "claws": "claws",
+        "balance": "balance",
+        "accuracy": "accuracy",
+        "strategy": "strategy",
+        "teamwork": "teamwork",
+        "intuition": "intuition",
+        "memory": "memory",
+        "eyesight": "eyesight",
+        "smell": "smell",
+        "hearing": "hearing",
+        "leadership": "leadership"
     }
 }

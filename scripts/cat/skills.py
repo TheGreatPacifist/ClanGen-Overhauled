@@ -100,6 +100,21 @@ class SkillPath(Enum):
     )
     GHOST = ("morbid curiosity", "ghost sense", "ghost sight", "ghost speaker")
     GARDENER = ("interested in herbs", "good with herbs", "nurtures plants", "herb tender")
+    STEALTH = ("???", "???", "???", "???")
+    SPEED = ("???", "???", "???", "???")
+    STRENGTH = ("???", "???", "???", "???")
+    BITE = ("???", "???", "???", "???")
+    CLAWS = ("???", "???", "???", "???")
+    BALANCE = ("???", "???", "???", "???")
+    ACCURACY = ("???", "???", "???", "???")
+    STRATEGY = ("???", "???", "???", "???")
+    TEAMWORK = ("???", "???", "???", "???")
+    INTUITION = ("???", "???", "???", "???")
+    MEMORY = ("???", "???", "???", "???")
+    EYESIGHT = ("???", "???", "???", "???")
+    SMELL = ("???", "???", "???", "???")
+    HEARING = ("???", "???", "???", "???")
+    LEADERSHIP = ("???", "???", "???", "???")
 
     @staticmethod
     def get_random(exclude: list = ()):
@@ -176,7 +191,22 @@ class Skill:
         SkillPath.PROPHET: "prophesying",
         SkillPath.GHOST: "ghosts",
         SkillPath.DARK: "dark forest",
-        SkillPath.GARDENER: "gardening"
+        SkillPath.GARDENER: "gardening",
+        SkillPath.STEALTH: "stealthy",
+        SkillPath.SPEED: "speedy",
+        SkillPath.STRENGTH: "strength",
+        SkillPath.BITE: "bite",
+        SkillPath.CLAWS: "claws",
+        SkillPath.BALANCE: "balance",
+        SkillPath.ACCURACY: "accuracy",
+        SkillPath.STRATEGY: "strategy",
+        SkillPath.TEAMWORK: "teamwork",
+        SkillPath.INTUITION: "intuition",
+        SkillPath.MEMORY: "memory",
+        SkillPath.EYESIGHT: "eyesight",
+        SkillPath.SMELL: "smell",
+        SkillPath.HEARING: "hearing",
+        SkillPath.LEADERSHIP: "leadership"
     }
 
     def __init__(self, path: SkillPath, points: int = 0, interest_only: bool = False):
@@ -326,6 +356,21 @@ class CatSkills:
         SkillPath.GHOST: SkillTypeFlag.SUPERNATURAL,
         SkillPath.DARK: SkillTypeFlag.SUPERNATURAL,
         SkillPath.GARDENER: SkillTypeFlag.SMART,
+        SkillPath.STEALTH: SkillTypeFlag.AGILE | SkillTypeFlag.SMART,
+        SkillPath.SPEED: SkillTypeFlag.AGILE,
+        SkillPath.STRENGTH: SkillTypeFlag.STRONG,
+        SkillPath.BITE: SkillTypeFlag.STRONG,
+        SkillPath.CLAWS: SkillTypeFlag.STRONG,
+        SkillPath.BALANCE: SkillTypeFlag.AGILE | SkillTypeFlag.OBSERVANT,
+        SkillPath.ACCURACY: SkillTypeFlag.AGILE | SkillTypeFlag.STRONG,
+        SkillPath.STRATEGY: SkillTypeFlag.SOCIAL | SkillTypeFlag.SMART,
+        SkillPath.TEAMWORK: SkillTypeFlag.SOCIAL | SkillTypeFlag.OBSERVANT,
+        SkillPath.INTUITION: SkillTypeFlag.SMART,
+        SkillPath.MEMORY: SkillTypeFlag.SMART | SkillTypeFlag.OBSERVANT,
+        SkillPath.EYESIGHT: SkillTypeFlag.OBSERVANT,
+        SkillPath.SMELL: SkillTypeFlag.OBSERVANT,
+        SkillPath.HEARING: SkillTypeFlag.OBSERVANT,
+        SkillPath.LEADERSHIP: SkillTypeFlag.SOCIAL | SkillTypeFlag.OBSERVANT,
     }
 
     # pylint: enable=unsupported-binary-operation
