@@ -45,6 +45,11 @@ class SpriteInspectScreen(Screens):
         self.acc_shown = True
         self.override_not_working = False
 
+        # dev_mode Things
+        if game.settings["dev_mode"]:
+            self.code_info_shown_text = None
+            self.code_info_shown = False
+
         super().__init__(name)
 
     def handle_event(self, event):
@@ -119,6 +124,16 @@ class SpriteInspectScreen(Screens):
 
                 self.make_cat_image()
                 self.update_checkboxes()
+            elif game.settings["dev_mode"]:
+                if event.ui_element == self.checkboxes["code_info_shown"]:
+                    if self.code_info_shown:
+                        self.code_info_shown = False
+                    else:
+                        self.code_info_shown = True
+                        self.change_screen('code inspect screen')
+
+                
+                self.update_checkboxes()
             elif event.ui_element == self.cat_elements["favourite_button"]:
                 self.the_cat.favourite = False
                 self.cat_elements["favourite_button"].hide()
@@ -131,6 +146,8 @@ class SpriteInspectScreen(Screens):
         return super().handle_event(event)
 
     def screen_switches(self):
+        if game.settings["dev_mode"]:
+            self.code_info_shown = False      
         self.next_cat_button = UIImageButton(
             scale(pygame.Rect((1244, 50), (306, 60))),
             "",
@@ -187,18 +204,39 @@ class SpriteInspectScreen(Screens):
             object_id=get_text_box_theme("#text_box_34_horizcenter"),
             starting_height=2,
         )
-        self.override_dead_lineart_text = pygame_gui.elements.UITextBox(
-            "Show as Living",
-            scale(pygame.Rect((500, 1260), (-1, 100))),
-            object_id=get_text_box_theme("#text_box_34_horizcenter"),
-            starting_height=2,
-        )
-        self.override_not_working_text = pygame_gui.elements.UITextBox(
-            "Show as Healthy",
-            scale(pygame.Rect((900, 1260), (-1, 100))),
-            object_id=get_text_box_theme("#text_box_34_horizcenter"),
-            starting_height=2,
-        )
+        if game.settings["dev_mode"]:
+            self.override_dead_lineart_text = pygame_gui.elements.UITextBox(
+                "Show as Living",
+                scale(pygame.Rect((300, 1260), (-1, 100))),
+                object_id=get_text_box_theme("#text_box_34_horizcenter"),
+                starting_height=2,
+            )
+            self.override_not_working_text = pygame_gui.elements.UITextBox(
+                "Show as Healthy",
+                scale(pygame.Rect((700, 1260), (-1, 100))),
+                object_id=get_text_box_theme("#text_box_34_horizcenter"),
+                starting_height=2,
+            )
+        
+            self.code_info_shown_text = pygame_gui.elements.UITextBox(
+                "Show Code Info", 
+                scale(pygame.Rect((1090, 1260), (290, 100))),
+                object_id=get_text_box_theme("#text_box_34_horizcenter"), 
+                starting_height=2
+                )
+        else:
+            self.override_dead_lineart_text = pygame_gui.elements.UITextBox(
+                "Show as Living",
+                scale(pygame.Rect((500, 1260), (-1, 100))),
+                object_id=get_text_box_theme("#text_box_34_horizcenter"),
+                starting_height=2,
+            )
+            self.override_not_working_text = pygame_gui.elements.UITextBox(
+                "Show as Healthy",
+                scale(pygame.Rect((900, 1260), (-1, 100))),
+                object_id=get_text_box_theme("#text_box_34_horizcenter"),
+                starting_height=2,
+            )
 
         if game.clan.clan_settings["backgrounds"]:
             self.platform_shown = True
@@ -341,24 +379,49 @@ class SpriteInspectScreen(Screens):
         self.make_one_checkbox(
             (1000, 1150), "acc_shown", self.acc_shown, self.the_cat.pelt.accessory
         )
+        if game.settings["dev_mode"]:
+            # "Show as living"
+            self.make_one_checkbox(
+                (200, 1250),
+                "override_dead_lineart",
+                self.override_dead_lineart,
+                self.the_cat.dead,
+                disabled_object_id="#checked_checkbox",
+            )
 
-        # "Show as living"
-        self.make_one_checkbox(
-            (400, 1250),
-            "override_dead_lineart",
-            self.override_dead_lineart,
-            self.the_cat.dead,
-            disabled_object_id="#checked_checkbox",
-        )
+            # "Show as healthy"
+            self.make_one_checkbox(
+                (600, 1250),
+                "override_not_working",
+                self.override_not_working,
+                self.the_cat.not_working(),
+                disabled_object_id="#checked_checkbox",
+            )
+        
+            # "Show code info"
+            self.make_one_checkbox(
+                (1000, 1250),
+                "code_info_shown", 
+                self.code_info_shown,
+                disabled_object_id="#checked_checkbox")
+        else:
+            # "Show as living"
+            self.make_one_checkbox(
+                (400, 1250),
+                "override_dead_lineart",
+                self.override_dead_lineart,
+                self.the_cat.dead,
+                disabled_object_id="#checked_checkbox",
+            )
 
-        # "Show as healthy"
-        self.make_one_checkbox(
-            (800, 1250),
-            "override_not_working",
-            self.override_not_working,
-            self.the_cat.not_working(),
-            disabled_object_id="#checked_checkbox",
-        )
+            # "Show as healthy"
+            self.make_one_checkbox(
+                (800, 1250),
+                "override_not_working",
+                self.override_not_working,
+                self.the_cat.not_working(),
+                disabled_object_id="#checked_checkbox",
+            )
 
     def make_one_checkbox(
         self,
@@ -502,6 +565,9 @@ class SpriteInspectScreen(Screens):
         self.override_dead_lineart_text = None
         self.override_not_working_text.kill()
         self.override_not_working_text = None
+        if game.settings["dev_mode"]:
+            self.code_info_shown_text.kill()
+            self.code_info_shown_text = None
 
         for ele in self.cat_elements:
             self.cat_elements[ele].kill()

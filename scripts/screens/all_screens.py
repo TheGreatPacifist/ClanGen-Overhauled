@@ -25,6 +25,7 @@ from .SpriteInspectScreen import SpriteInspectScreen
 from .StartScreen import StartScreen
 from .SwitchClanScreen import SwitchClanScreen
 from .WarriorDenScreen import WarriorDenScreen
+from .CodeInspectScreen import CodeInspectScreen
 
 # ---------------------------------------------------------------------------- #
 #                                  UI RULES                                    #
@@ -56,7 +57,7 @@ profile_screen = ProfileScreen('profile screen')
 ceremony_screen = CeremonyScreen('ceremony screen')
 role_screen = RoleScreen('role screen')
 sprite_inspect_screen = SpriteInspectScreen("sprite inspect screen")
-
+code_inspect_screen = CodeInspectScreen("code inspect screen")
 
 make_clan_screen = MakeClanScreen('make clan screen')
 

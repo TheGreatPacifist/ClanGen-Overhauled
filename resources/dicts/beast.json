@@ -1,0 +1,24 @@
+{
+  "INFO": [
+    "default should be what you'd like to display on the cat profile",
+    "plural and singular will be used on events"
+  ],
+  "CROW": {
+    "common": "crow",
+    "species": "corvid",
+    "summary": "a crow is a crow",
+    "sprite": "crow.png"
+  },
+  "HERMIT THRUSH": {
+    "common": "hermit thrush",
+    "species": "hermit fancylatin",
+    "summary": "hermit thrushes hermit",
+    "sprite": "hermit_thrush.png"
+  },
+  "RABBIT": {
+    "common": "rabbit",
+    "species": "harerabbit bunny",
+    "summary": "hop hop bunny hop",
+    "sprite": "rabbit.png"
+  }
+}
