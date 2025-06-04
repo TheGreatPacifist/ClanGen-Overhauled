@@ -100,9 +100,9 @@ class SkillPath(Enum):
     )
     GHOST = ("morbid curiosity", "ghost sense", "ghost sight", "ghost speaker")
     GARDENER = ("interested in herbs", "good with herbs", "nurtures plants", "herb tender")
-    STEALTH = ("good hider", "enjoys shadows", "stealthy", "masterful hider")
+    STEALTH = ("enjoys shadows", "good hider", "stealthy", "masterful hider")
     AGILITY = ("fancy footwork", "free climber", "agile", "graceful acrobat")
-    TEAMWORK = ("likes working with others", "never alone", "actively listens", "good at time management")
+    TEAMWORK = ("likes working with others", "actively listens", "never alone", "makes everything into a team effort")
     MEMORY = ("likes reminding", "good short-term memory", "good long-term memory", "remembers in great detail")
     LEADERSHIP = ("likes to lead", "good communicator", "takes charge", "inspirer")
 
