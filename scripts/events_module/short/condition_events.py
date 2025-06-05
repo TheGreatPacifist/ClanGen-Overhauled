@@ -995,6 +995,12 @@ class Condition_Events:
                 "mediator",
                 "mediator apprentice",
                 "elder",
+                "gardener",
+                "scout",
+                "hunter",
+                "builder",
+                "guard",
+                "merchant",
             ]
         ):
             for condition in cat.permanent_condition:

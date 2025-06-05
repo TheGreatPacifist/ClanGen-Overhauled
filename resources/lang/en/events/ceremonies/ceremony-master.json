@@ -1347,6 +1347,17 @@
     ],
     "(old_name) always dreamed of becoming a mediator: Now that {PRONOUN/m_c/subject}{VERB/m_c/'re/'s} m_c, an apprentice being mentored by (mentor), it feels like a wish come true."
   ],
+  "gardener_app_1": [
+    [
+      "gardener apprentice",
+      "yes_mentor",
+      "general_parents",
+      "general_leader",
+      "general_backstory",
+      "all_traits"
+    ],
+    "m_c looks around at the garden, and decides to make it {PRONOUN/m_c/poss} own. Hopefully (mentor) made them ready for this."
+  ],
   "med_0": [
     [
       "medicine cat",
@@ -3240,6 +3251,72 @@
       "all_traits"
     ],
     "(previous_mentor) tells l_n that (old_name) has completed {PRONOUN/m_c/poss} mediator training. l_n gives {PRONOUN/m_c/object} the name m_c after {PRONOUN/m_c/poss} r_h, welcoming {PRONOUN/m_c/object} as the Clan's new mediator."
+  ],
+  "gardener_1": [
+    [
+      "gardener",
+      "general_mentor",
+      "general_parents",
+      "general_leader",
+      "general_backstory",
+      "all_traits"
+    ],
+    "After a life of having a green thumb, m_c will be joining the elders with the Clan's blessing."
+  ],
+  "scout_1": [
+    [
+      "scout",
+      "general_mentor",
+      "general_parents",
+      "general_leader",
+      "general_backstory",
+      "all_traits"
+    ],
+    "After a life of mapping and servaying the area, m_c will be joining the elders with the Clan's blessing."
+  ],
+  "guard_1": [
+    [
+      "guard",
+      "general_mentor",
+      "general_parents",
+      "general_leader",
+      "general_backstory",
+      "all_traits"
+    ],
+    "After a life of protecting the Clan, m_c will be joining the elders with the Clan's blessing."
+  ],
+  "hunter_1": [
+    [
+      "hunter",
+      "general_mentor",
+      "general_parents",
+      "general_leader",
+      "general_backstory",
+      "all_traits"
+    ],
+    "After a life of hunting prey, m_c will be joining the elders with the Clan's blessing."
+  ],
+  "builder_1": [
+    [
+      "builder",
+      "general_mentor",
+      "general_parents",
+      "general_leader",
+      "general_backstory",
+      "all_traits"
+    ],
+    "After a life of making the Clan look like home, m_c will be joining the elders with the Clan's blessing."
+  ],
+  "merchant_1": [
+    [
+      "merchant",
+      "general_mentor",
+      "general_parents",
+      "general_leader",
+      "general_backstory",
+      "all_traits"
+    ],
+    "After a life of buying and selling materials, m_c will be joining the elders with the Clan's blessing."
   ],
   "elder_0": [
     [

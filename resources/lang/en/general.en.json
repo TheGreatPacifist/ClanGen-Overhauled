@@ -45,6 +45,34 @@
             "one": "mediator apprentice",
             "many": "mediator apprentices"
         },
+        "gardener": {
+            "one": "gardener",
+            "many": "gardeners"
+        },
+        "scout": {
+            "one": "scout",
+            "many": "scouts"
+        },
+        "gardener apprentice": {
+            "one": "gardener apprentice",
+            "many": "gardener apprentices"
+        },
+        "builder": {
+            "one": "builder",
+            "many": "builders"
+        },
+        "guard": {
+            "one": "guard",
+            "many": "guards"
+        },
+        "hunter": {
+            "one": "hunter",
+            "many": "hunters"
+        },
+        "merchant": {
+            "one": "merchant",
+            "many": "merchants"
+        },
         "queen": {
             "one": "queen",
             "many": "queens"

@@ -53,6 +53,12 @@ class Clan:
         "leader",
         "elder",
         "mediator",
+        "scout",
+        "guard",
+        "hunter",
+        "builder",
+        "gardener",
+        "merchant",
         "general",
     ]
 
@@ -213,12 +219,19 @@ class Clan:
                     "apprentice",
                     "mediator apprentice",
                     "medicine cat apprentice",
+                    "gardener apprentice",
                     "warrior",
                     "medicine cat",
                     "leader",
                     "mediator",
                     "deputy",
                     "elder",
+                    "scout",
+                    "guard",
+                    "hunter",
+                    "builder",
+                    "gardener",
+                    "merchant"
                 ]
             ),
         )

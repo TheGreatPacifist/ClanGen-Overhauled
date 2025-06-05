@@ -72,6 +72,13 @@ class Cat:
         "newborn",
         "kitten",
         "elder",
+        "gardener apprentice",
+        "gardener",
+        "scout",
+        "guard",
+        "hunter",
+        "builder",
+        "merchant",
         "apprentice",
         "warrior",
         "mediator apprentice",
@@ -264,6 +271,7 @@ class Cat:
                 "apprentice",
                 "mediator apprentice",
                 "medicine cat apprentice",
+                "gardener apprentice",
             ):
                 self.age = CatAgeEnum.ADOLESCENT
             else:
@@ -955,7 +963,7 @@ class Cat:
     def rank_change_traits_skill(self, mentor):
         """Updates trait and skill upon ceremony"""
 
-        if self.status in ("warrior", "medicine cat", "mediator"):
+        if self.status in ("warrior", "medicine cat", "mediator", "gardener"):
             # Give a couple doses of mentor influence:
             if mentor:
                 max_influence = randint(0, 2)
@@ -2130,6 +2138,7 @@ class Cat:
             "apprentice",
             "medicine cat apprentice",
             "mediator apprentice",
+            "gardener apprentice",
         ):
             _ment = Cat.fetch_cat(self.mentor) if self.mentor else None
             self.status_change(
@@ -2291,6 +2300,11 @@ class Cat:
             and potential_mentor.status != "mediator"
         ):
             return False
+        if (
+            self.status == "gardener apprentice"
+            and potential_mentor.status != "gardener"
+        ):
+            return False
 
         # If not an app, don't need a mentor
         if "apprentice" not in self.status:
@@ -2339,7 +2353,7 @@ class Cat:
             or self.outside
             or self.exiled
             or self.status
-            not in ("apprentice", "mediator apprentice", "medicine cat apprentice")
+            not in ("apprentice", "mediator apprentice", "medicine cat apprentice", "gardener apprentice")
         )
         if illegible_for_mentor:
             self.__remove_mentor()

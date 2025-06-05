@@ -140,6 +140,12 @@ class AllegiancesScreen(Screens):
         living_apprentices = []
         living_kits = []
         living_elders = []
+        living_gardener = []
+        living_scout = []
+        living_guard = []
+        living_hunter = []
+        living_builder = []
+        living_merchant = []
         for cat in living_cats:
             if cat.status == "medicine cat":
                 living_meds.append(cat)
@@ -147,10 +153,23 @@ class AllegiancesScreen(Screens):
                 living_warriors.append(cat)
             elif cat.status == "mediator":
                 living_mediators.append(cat)
+            elif cat.status == "gardener":
+                living_gardener.append(cat)
+            elif cat.status == "scout":
+                living_scout.append(cat)
+            elif cat.status == "guard":
+                living_guard.append(cat)
+            elif cat.status == "hunter":
+                living_hunter.append(cat)
+            elif cat.status == "builder":
+                living_builder.append(cat)
+            elif cat.status == "merchant":
+                living_merchant.append(cat)
             elif cat.status in (
                 "apprentice",
                 "medicine cat apprentice",
                 "mediator apprentice",
+                "gardener apprentice"
             ):
                 living_apprentices.append(cat)
             elif cat.status in ("kitten", "newborn"):
@@ -209,6 +228,66 @@ class AllegiancesScreen(Screens):
             ] = f"<b><u>{i18n.t('general.mediator', count=len(living_mediators)).upper()}</u></b>"
 
             _box[1] = "\n".join([self.generate_one_entry(i) for i in living_mediators])
+            outputs.append(_box)
+
+        # Gardener Box
+        if living_gardener:
+            _box = ["", ""]
+            _box[
+                0
+            ] = f"<b><u>{i18n.t('general.gardener', count=len(living_gardener)).upper()}</u></b>"
+
+            _box[1] = "\n".join([self.generate_one_entry(i) for i in living_gardener])
+            outputs.append(_box)
+
+        # Scout Box
+        if living_scout:
+            _box = ["", ""]
+            _box[
+                0
+            ] = f"<b><u>{i18n.t('general.scout', count=len(living_scout)).upper()}</u></b>"
+
+            _box[1] = "\n".join([self.generate_one_entry(i) for i in living_scout])
+            outputs.append(_box)
+
+        # Guard Box
+        if living_guard:
+            _box = ["", ""]
+            _box[
+                0
+            ] = f"<b><u>{i18n.t('general.guard', count=len(living_guard)).upper()}</u></b>"
+
+            _box[1] = "\n".join([self.generate_one_entry(i) for i in living_guard])
+            outputs.append(_box)
+
+        # Hunter Box
+        if living_hunter:
+            _box = ["", ""]
+            _box[
+                0
+            ] = f"<b><u>{i18n.t('general.hunter', count=len(living_hunter)).upper()}</u></b>"
+
+            _box[1] = "\n".join([self.generate_one_entry(i) for i in living_hunter])
+            outputs.append(_box)
+
+        # Builder Box
+        if living_builder:
+            _box = ["", ""]
+            _box[
+                0
+            ] = f"<b><u>{i18n.t('general.builder', count=len(living_builder)).upper()}</u></b>"
+
+            _box[1] = "\n".join([self.generate_one_entry(i) for i in living_builder])
+            outputs.append(_box)
+
+        # Mercahnt Box
+        if living_merchant:
+            _box = ["", ""]
+            _box[
+                0
+            ] = f"<b><u>{i18n.t('general.merchant', count=len(living_merchant)).upper()}</u></b>"
+
+            _box[1] = "\n".join([self.generate_one_entry(i) for i in living_merchant])
             outputs.append(_box)
 
         # Warrior Box:

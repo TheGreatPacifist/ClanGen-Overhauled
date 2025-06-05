@@ -20,6 +20,20 @@
         "blurb_mediator_app": "%{name} is a <b>mediator apprentice</b>, training to become a full mediator. Mediators are in charge of handling disagreements both within the Clan and between Clans. Mediator apprentices are often chosen for their quick thinking and steady personality. Apprentices usually take the suffix \"-paw\", to represent the path their paws take towards adulthood. ",
         "blurb_kitten": "%{name} is a <b>kitten</b>. All cats below the age of six moons are considered kits. Kits are prohibited from leaving camp in order to protect them from the dangers of the wild. Although they don't have any official duties in the Clan, they are expected to learn the legends and traditions of their Clan. They are protected by every cat in the Clan and always eat first. Kits usually take the suffix \"-kit\".",
         "blurb_newborn": "%{name} is a <b>newborn kitten</b>. All cats below the age of six moons are considered kits. Kits are prohibited from leaving camp in order to protect them from the dangers of the wild. Although they don't have any official duties in the Clan, they are expected to learn the legends and traditions of their Clan. They are protected by every cat in the Clan and always eat first. Kits usually take the suffix \"-kit\".",
+        "blurb_gardener": "%{name} is a <b>gardener</b>. Gardeners are not ones to explore out of the clan, mainly focusing on their gardens",
+        "switch_gardener": "switch to gardener",
+        "blurb_scout": "%{name} is a <b>scout</b>. Scouts are ones to explore outside the clan, exploring what the world has instore",
+        "switch_scout": "switch to scout",
+        "blurb_gardener_app": "%{name} is a <b>gardener apprentice</b>, training to be come a Gardener.",
+        "switch_gardener_app": "switch to gardener apprentice",
+        "blurb_guard": "%{name} is a <b>guard</b>. Guards protect the camp from outside forces",
+        "switch_guard": "switch to guard",
+        "blurb_hunter": "%{name} is a <b>hunter</b>. Hunters usually go and get prey for the Clan to eat",
+        "switch_hunter": "switch to hunter",
+        "blurb_builder": "%{name} is a <b>builder</b>. Builders make structures in the Clan area, and makes sure they don't get broken down.",
+        "switch_builder": "switch to builder",
+        "blurb_merchant": "%{name} is a <b>merchant</b>. Merchants will trade materials to use around your clan.",
+        "switch_merchant": "switch to merchant",
         "blurb_unknown": "%{name} has an unknown rank. I guess they want to make their own way in life!"
     }
 }

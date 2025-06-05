@@ -388,6 +388,13 @@ class ClanSettingsScreen(Screens):
         med_cat_apprentices = 0
         mediator_apprentices = 0
         mediators = 0
+        gardeners = 0
+        gardener_apprentices = 0
+        scouts = 0
+        guards = 0
+        hunters = 0
+        builders = 0
+        merchants = 0
         elders = 0
         kits = 0
         cats_outside = 0
@@ -429,6 +436,20 @@ class ClanSettingsScreen(Screens):
                 elders += 1
             elif cat.status in ("newborn", "kitten"):
                 kits += 1
+            elif cat.status == "gardener":
+                gardeners += 1
+            elif cat.status == "scout":
+                scouts += 1
+            elif cat.status == "gardener apprentice":
+                gardener_apprentices += 1
+            elif cat.status == "guard":
+                guards += 1
+            elif cat.status == "hunter":
+                hunters += 1
+            elif cat.status == "builder":
+                builders += 1
+            elif cat.status == "merchant":
+                merchants += 1
 
         self.checkboxes_text["stat_box"] = pygame_gui.elements.UITextBox(
             "screens.clan_settings.stats_text",
@@ -445,6 +466,13 @@ class ClanSettingsScreen(Screens):
                 "apps": str(warrior_apprentices),
                 "mediators": str(mediators),
                 "mediatorapps": str(mediator_apprentices),
+                "gardeners": str(gardeners),
+                "gardenerapps": str(gardener_apprentices),
+                "scouts": str(scouts),
+                "guards": str(guards),
+                "hunters": str(hunters),
+                "builders": str(builders),
+                "merchants": str(merchants),
                 "elders": str(elders),
                 "kits": str(kits),
                 "faded": str(faded_cats),

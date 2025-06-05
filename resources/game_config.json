@@ -225,6 +225,11 @@
 		"become_mediator_chances": {
 			"warrior": 5000,
 			"elder": 400
+		},
+		"gardener_app_chance": 20,
+		"base_gardener_app_cahnce": 20,
+		"become_gardener_chances": {
+			"warrior": 2000
 		}
 	},
 	"lost_cat": {

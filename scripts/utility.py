@@ -232,7 +232,7 @@ def get_random_moon_cat(
         if mentor_app_modifier:
             if (
                     main_cat.status
-                    in ("apprentice", "mediator apprentice", "medicine cat apprentice")
+                    in ("apprentice", "mediator apprentice", "medicine cat apprentice", "gardener apprentice")
                     and main_cat.mentor
                     and not int(random() * 3)
             ):
@@ -428,6 +428,13 @@ def create_new_cat_block(
             "newborn",
             "kitten",
             "elder",
+            "gardener apprentice"
+            "gardener",
+            "scout",
+            "hunter", 
+            "guard",
+            "builder",
+            "merchant",
             "apprentice",
             "warrior",
             "mediator apprentice",
@@ -461,12 +468,12 @@ def create_new_cat_block(
             break
 
     if status and not age:
-        if status in ("apprentice", "mediator apprentice", "medicine cat apprentice"):
+        if status in ("apprentice", "mediator apprentice", "medicine cat apprentice", "gardener apprentice"):
             age = randint(
                 Cat.age_moons[CatAgeEnum.ADOLESCENT][0],
                 Cat.age_moons[CatAgeEnum.ADOLESCENT][1],
             )
-        elif status in ("warrior", "mediator", "medicine cat"):
+        elif status in ("warrior", "mediator", "medicine cat", "scout", "guard", "hunter", "builder", "gardener", "merchant"):
             age = randint(
                 Cat.age_moons["young adult"][0], Cat.age_moons["senior adult"][1]
             )

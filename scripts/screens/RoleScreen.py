@@ -68,6 +68,24 @@ class RoleScreen(Screens):
             elif event.ui_element == self.switch_med_cat:
                 self.the_cat.status_change("medicine cat", resort=True)
                 self.update_selected_cat()
+            elif event.ui_element == self.switch_gardener:
+                self.the_cat.status_change("gardener", resort=True)
+                self.update_selected_cat()
+            elif event.ui_element == self.switch_scout:
+                self.the_cat.status_change("scout", resort=True)
+                self.update_selected_cat()
+            elif event.ui_element == self.switch_guard:
+                self.the_cat.status_change("guard", resort=True)
+                self.update_selected_cat()
+            elif event.ui_element == self.switch_builder:
+                self.the_cat.status_change("builder", resort=True)
+                self.update_selected_cat()
+            elif event.ui_element == self.switch_merchant:
+                self.the_cat.status_change("merchant", resort=True)
+                self.update_selected_cat()
+            elif event.ui_element == self.switch_hunter:
+                self.the_cat.status_change("hunter", resort=True)
+                self.update_selected_cat()
             elif event.ui_element == self.retire:
                 self.the_cat.status_change("elder", resort=True)
                 # Since you can't "unretire" a cat, apply the skill and trait change
@@ -84,6 +102,9 @@ class RoleScreen(Screens):
                 self.update_selected_cat()
             elif event.ui_element == self.switch_mediator_app:
                 self.the_cat.status_change("mediator apprentice", resort=True)
+                self.update_selected_cat()
+            elif event.ui_element == self.switch_gardener_app:
+                self.the_cat.status_change("gardener apprentice", resort=True)
                 self.update_selected_cat()
 
         elif event.type == pygame.KEYDOWN and game.settings["keybinds"]:
@@ -163,12 +184,33 @@ class RoleScreen(Screens):
             object_id="@buttonstyles_ladder_middle",
             anchors={"top_target": self.bar},
         )
+        self.switch_scout = UISurfaceImageButton(
+            ui_scale(pygame.Rect((225, 0), (172, 36))),
+            "screens.role.switch_scout",
+            get_button_dict(ButtonStyles.LADDER_MIDDLE, (172, 36)),
+            object_id="@buttonstyles_ladder_middle",
+            anchors={"top_target": self.switch_warrior},
+        )
+        self.switch_guard = UISurfaceImageButton(
+            ui_scale(pygame.Rect((225, 0), (172, 36))),
+            "screens.role.switch_guard",
+            get_button_dict(ButtonStyles.LADDER_MIDDLE, (172, 36)),
+            object_id="@buttonstyles_ladder_middle",
+            anchors={"top_target": self.switch_scout},
+        )
+        self.switch_hunter = UISurfaceImageButton(
+            ui_scale(pygame.Rect((225, 0), (172, 36))),
+            "screens.role.switch_hunter",
+            get_button_dict(ButtonStyles.LADDER_MIDDLE, (172, 36)),
+            object_id="@buttonstyles_ladder_middle",
+            anchors={"top_target": self.switch_guard},
+        )
         self.retire = UISurfaceImageButton(
             ui_scale(pygame.Rect((225, 0), (172, 36))),
             "screens.role.retire",
             get_button_dict(ButtonStyles.LADDER_MIDDLE, (172, 36)),
             object_id="@buttonstyles_ladder_middle",
-            anchors={"top_target": self.switch_warrior},
+            anchors={"top_target": self.switch_hunter},
         )
         self.switch_med_cat = UISurfaceImageButton(
             ui_scale(pygame.Rect((402, 0), (172, 52))),
@@ -186,6 +228,28 @@ class RoleScreen(Screens):
             object_id="@buttonstyles_ladder_middle",
             anchors={"top_target": self.switch_med_cat},
         )
+        self.switch_gardener = UISurfaceImageButton(
+            ui_scale(pygame.Rect((402, 0), (172, 36))),
+            "screens.role.switch_gardener",
+            get_button_dict(ButtonStyles.LADDER_MIDDLE, (172, 36)),
+            object_id="@buttonstyles_ladder_middle",
+            anchors={"top_target": self.switch_mediator},
+        )
+        self.switch_builder = UISurfaceImageButton(
+            ui_scale(pygame.Rect((402, 0), (172, 36))),
+            "screens.role.switch_builder",
+            get_button_dict(ButtonStyles.LADDER_MIDDLE, (172, 36)),
+            object_id="@buttonstyles_ladder_middle",
+            anchors={"top_target": self.switch_gardener},
+        )
+        self.switch_merchant = UISurfaceImageButton(
+            ui_scale(pygame.Rect((402, 0), (172, 36))),
+            "screens.role.switch_merchant",
+            get_button_dict(ButtonStyles.LADDER_MIDDLE, (172, 36)),
+            object_id="@buttonstyles_ladder_middle",
+            anchors={"top_target": self.switch_builder},
+        )
+
 
         # In-TRAINING ROLES:
         self.switch_warrior_app = UISurfaceImageButton(
@@ -212,6 +276,15 @@ class RoleScreen(Screens):
             get_button_dict(ButtonStyles.LADDER_MIDDLE, (172, 52)),
             object_id="@buttonstyles_ladder_middle",
             anchors={"top_target": self.switch_med_app},
+            text_is_multiline=True,
+            text_layer_object_id="@buttonstyles_ladder_multiline",
+        )
+        self.switch_gardener_app = UISurfaceImageButton(
+            ui_scale(pygame.Rect((579, 0), (172, 52))),
+            "screens.role.switch_gardener_app",
+            get_button_dict(ButtonStyles.LADDER_MIDDLE, (172, 52)),
+            object_id="@buttonstyles_ladder_middle",
+            anchors={"top_target": self.switch_mediator_app},
             text_is_multiline=True,
             text_layer_object_id="@buttonstyles_ladder_multiline",
         )
@@ -524,6 +597,20 @@ class RoleScreen(Screens):
             output = "screens.role.blurb_medcat_app"
         elif self.the_cat.status == "mediator apprentice":
             output = "screens.role.blurb_mediator_app"
+        elif self.the_cat.status == "gardener":
+            output = "screens.role.blurb_gardener"
+        elif self.the_cat.status == "gardener apprentice":
+            output = "screens.role.blurb_gardener_app"
+        elif self.the_cat.status == "scout":
+            output = "screens.role.blurb_scout"
+        elif self.the_cat.status == "guard":
+            output = "screens.role.blurb_guard"
+        elif self.the_cat.status == "hunter":
+            output = "screens.role.blurb_hunter"
+        elif self.the_cat.status == "builder":
+            output = "screens.role.blurb_builder"
+        elif self.the_cat.status == "merchant":
+            output = "screens.role.blurb_merchant"
         elif self.the_cat.status == "kitten":
             output = "screens.role.blurb_kitten"
         elif self.the_cat.status == "newborn":
@@ -560,6 +647,20 @@ class RoleScreen(Screens):
         del self.switch_warrior_app
         self.switch_mediator_app.kill()
         del self.switch_mediator_app
+        self.switch_gardener.kill()
+        del self.switch_gardener
+        self.switch_gardener_app.kill()
+        del self.switch_gardener_app
+        self.switch_scout.kill()
+        del self.switch_scout
+        self.switch_guard.kill()
+        del self.switch_guard
+        self.switch_hunter.kill()
+        del self.switch_hunter
+        self.switch_builder.kill()
+        del self.switch_builder
+        self.switch_merchant.kill()
+        del self.switch_merchant
         self.blurb_background.kill()
         del self.blurb_background
 

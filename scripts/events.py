@@ -94,6 +94,12 @@ class Events:
                 "apprentice",
                 "mediator",
                 "mediator apprentice",
+                "scout",
+                "guard",
+                "hunter",
+                "builder",
+                "gardener",
+                "merchant",
             }
             and not cat.dead
             and not cat.outside
@@ -819,12 +825,15 @@ class Events:
                 "mediator apprentice",
                 "kitten",
                 "newborn",
+                "gardener apprentice"
             ]:
                 if x.moons >= 15:
                     if x.status == "medicine cat apprentice":
                         self.ceremony(x, "medicine cat")
                     elif x.status == "mediator apprentice":
                         self.ceremony(x, "mediator")
+                    elif x.status == "gardener apprentice":
+                        self.ceremony(x, "gardener")
                     else:
                         self.ceremony(x, "warrior")
                 elif (
@@ -833,6 +842,7 @@ class Events:
                         "apprentice",
                         "medicine cat apprentice",
                         "mediator apprentice",
+                        "gardener apprentice"
                     ]
                     and x.moons >= 6
                 ):
@@ -1348,6 +1358,7 @@ class Events:
                 "apprentice",
                 "mediator apprentice",
                 "medicine cat apprentice",
+                "gardener apprentice"
             ]:
                 if game.clan.clan_settings["12_moon_graduation"]:
                     _ready = cat.moons >= 12
@@ -1383,6 +1394,11 @@ class Events:
 
                     elif cat.status == "mediator apprentice":
                         self.ceremony(cat, "mediator", preparedness)
+                        self.ceremony_accessory = True
+                        self.gain_accessories(cat)
+
+                    elif cat.status == "gardener apprentice":
+                        self.ceremony(cat, "gardener", preparedness)
                         self.ceremony_accessory = True
                         self.gain_accessories(cat)
 
@@ -1436,6 +1452,12 @@ class Events:
             "medicine cat": ["medicine cat"],
             "warrior": ["warrior", "deputy", "leader", "elder"],
             "mediator": ["mediator"],
+            "gardener": ["gardener"],
+            "scout": ["scout"],
+            "guard": ["guard"],
+            "hunter": ["hunter"],
+            "builder": ["builder"],
+            "merchant": ["merchant"],
         }
 
         try:
@@ -1600,7 +1622,7 @@ class Events:
 
         # getting the random honor if it's needed
         random_honor = None
-        if promoted_to in ["warrior", "mediator", "medicine cat"]:
+        if promoted_to in ["warrior", "mediator", "medicine cat", "scout", "guard", "hunter", "builder", "gardener", "merchant"]:
             traits = load_lang_resource("events/ceremonies/ceremony_traits.json")
 
             try:
@@ -1608,7 +1630,7 @@ class Events:
             except KeyError:
                 random_honor = i18n.t("defaults.ceremony_honor")
 
-        if cat.status in ["warrior", "medicine cat", "mediator"]:
+        if cat.status in ["warrior", "medicine cat", "mediator", "scout", "guard", "hunter", "builder", "gardener", "merchant"]:
             History.add_app_ceremony(cat, random_honor)
 
         ceremony_tags, ceremony_text = self.CEREMONY_TXT[
@@ -1787,6 +1809,7 @@ class Events:
             "apprentice",
             "medicine cat apprentice",
             "mediator apprentice",
+            "gardener apprentice",
         ]:
             if cat.not_working() and int(random.random() * 3):
                 return
