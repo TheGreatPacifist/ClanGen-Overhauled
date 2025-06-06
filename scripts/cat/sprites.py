@@ -200,7 +200,7 @@ class Sprites:
 
         # Define dark patches
         dark_patches = [
-            ['FULLWHITE', 'ANY', 'TUXEDO', 'LITTLE', 'COLOURPOINT', 'VAN', 'ANYTWO', 'MOON', 'PHANTOM', 'POWDER',
+            ['FULLDARK', 'ANY', 'TUXEDO', 'LITTLE', 'COLOURPOINT', 'VAN', 'ANYTWO', 'MOON', 'PHANTOM', 'POWDER',
              'BLEACHED', 'SAVANNAH', 'FADESPOTS', 'PEBBLESHINE'],
             ['EXTRA', 'ONEEAR', 'BROKEN', 'LIGHTTUXEDO', 'BUZZARDFANG', 'RAGDOLL', 'LIGHTSONG', 'VITILIGO', 'BLACKSTAR',
              'PIEBALD', 'CURVED', 'PETAL', 'SHIBAINU', 'OWL'],

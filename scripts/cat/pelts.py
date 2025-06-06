@@ -1063,7 +1063,7 @@ class Pelt:
         else:
             self.dark_points = None
 
-        dark_list = [Pelt.little_dark, Pelt.mid_dark, Pelt.high_dark, Pelt.mostly_dark, ['FULLDARK']]
+        dark_list = [Pelt.little_dark, Pelt.mid_dark, Pelt.high_dark, Pelt.mostly_dark, 'FULLDARK']
 
         weights = [0, 0, 0, 0, 0]  # Same order as white_list
         for p_ in par_darkpatches:
@@ -1240,7 +1240,7 @@ class Pelt:
 
         # DARK PATCHES TINT
         if self.dark_patches or self.dark_points:
-            # Now for white patches
+            # Now for dark patches
             base_tints = sprites.dark_patches_tint["possible_tints"]["basic"]
             if self.colour in sprites.cat_tints["colour_groups"]:
                 color_group = sprites.dark_patches_tint["colour_groups"].get(self.colour, "dark")
@@ -1395,7 +1395,7 @@ class Pelt:
 
         if cat.pelt.dark_patches:
             if cat.pelt.dark_patches == "FULLDARK":
-                # If the cat is fullwhite, discard all other information. They are just white
+                # If the cat is fulldark, discard all other information. They are just white
                 color_name = "dark"
             if cat.pelt.dark_patches in Pelt.mostly_dark and cat.pelt.name != "Calico":
                 color_name = f"dark and {color_name}"
@@ -1484,7 +1484,7 @@ class Pelt:
 
         if cat.pelt.dark_patches:
             if cat.pelt.dark_patches == "FULLDARK":
-                # If the cat is fullwhite, discard all other information. They are just white
+                # If the cat is fulldark, discard all other information. They are just white
                 color_name = i18n.t("cat.pelts.FULLDARK")
                 pelt_name = ""
             elif cat.pelt.name != "Calico":

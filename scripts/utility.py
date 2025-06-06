@@ -788,7 +788,7 @@ def create_new_cat(
             age = 0
         elif litter or kit:
             age = randint(1, 5)
-        elif status in ("apprentice", "medicine cat apprentice", "mediator apprentice"):
+        elif status in ("apprentice", "medicine cat apprentice", "mediator apprentice", "gardener apprentice"):
             age = randint(6, 11)
         elif status == "warrior":
             age = randint(23, 120)
@@ -2659,17 +2659,17 @@ def generate_sprite(
             and game.config["cat_sprites"]["sick_sprites"]
     ):
         if age in ["kitten", "adolescent"]:
-            cat_sprite = str(19)
+            cat_sprite = str(37)
         else:
-            cat_sprite = str(18)
+            cat_sprite = str(36)
     elif cat.pelt.paralyzed and age != "newborn":
         if age in ["kitten", "adolescent"]:
-            cat_sprite = str(17)
+            cat_sprite = str(32)
         else:
             if cat.pelt.length == "long":
-                cat_sprite = str(16)
+                cat_sprite = str(31)
             else:
-                cat_sprite = str(15)
+                cat_sprite = str(30)
     else:
         if age == "elder" and not game.config["fun"]["all_cats_are_newborn"]:
             age = "senior"
