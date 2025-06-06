@@ -446,7 +446,7 @@ class RoleScreen(Screens):
 
             self.switch_warrior.disable()
             self.switch_med_cat.enable()
-            self.switch_mediator.disable()
+            self.switch_mediator.enable()
             self.switch_gardener.enable()
             self.switch_scout.enable()
             self.switch_guard.enable()
@@ -601,6 +601,26 @@ class RoleScreen(Screens):
             self.switch_warrior_app.enable()
             self.switch_mediator_app.disable()
             self.switch_gardener_app.enable()
+        elif self.the_cat.status == "gardener apprentice":
+            self.promote_leader.disable()
+            self.promote_deputy.disable()
+
+            self.switch_warrior.disable()
+            self.switch_med_cat.disable()
+            self.switch_mediator.disable()
+            self.switch_gardener.disable()
+            self.switch_scout.disable()
+            self.switch_guard.disable()
+            self.switch_hunter.disable()
+            self.switch_builder.disable()
+            self.switch_merchant.disable()
+            self.retire.disable()
+
+            # In-TRAINING ROLES:
+            self.switch_med_app.enable()
+            self.switch_warrior_app.enable()
+            self.switch_mediator_app.enable()
+            self.switch_gardener_app.disable()
         elif self.the_cat.status == "leader":
             self.promote_leader.disable()
             self.promote_deputy.disable()
@@ -642,6 +662,141 @@ class RoleScreen(Screens):
             self.switch_hunter.enable()
             self.switch_builder.enable()
             self.switch_merchant.enable()
+            self.retire.enable()
+
+            # In-TRAINING ROLES:
+            self.switch_med_app.disable()
+            self.switch_warrior_app.disable()
+            self.switch_mediator_app.disable()
+            self.switch_gardener_app.disable()
+        elif self.the_cat.status == "scout":
+            if leader_invalid:
+                self.promote_leader.enable()
+            else:
+                self.promote_leader.disable()
+
+            if deputy_invalid:
+                self.promote_deputy.enable()
+            else:
+                self.promote_deputy.disable()
+
+            self.switch_warrior.enable()
+            self.switch_med_cat.enable()
+            self.switch_mediator.enable()
+            self.switch_gardener.enable()
+            self.switch_scout.disable()
+            self.switch_guard.enable()
+            self.switch_hunter.enable()
+            self.switch_builder.enable()
+            self.switch_merchant.enable()
+            self.retire.enable()
+
+            # In-TRAINING ROLES:
+            self.switch_med_app.disable()
+            self.switch_warrior_app.disable()
+            self.switch_mediator_app.disable()
+            self.switch_gardener_app.disable()
+        elif self.the_cat.status == "guard":
+            if leader_invalid:
+                self.promote_leader.enable()
+            else:
+                self.promote_leader.disable()
+
+            if deputy_invalid:
+                self.promote_deputy.enable()
+            else:
+                self.promote_deputy.disable()
+
+            self.switch_warrior.enable()
+            self.switch_med_cat.enable()
+            self.switch_mediator.enable()
+            self.switch_gardener.enable()
+            self.switch_scout.enable()
+            self.switch_guard.disable()
+            self.switch_hunter.enable()
+            self.switch_builder.enable()
+            self.switch_merchant.enable()
+            self.retire.enable()
+
+            # In-TRAINING ROLES:
+            self.switch_med_app.disable()
+            self.switch_warrior_app.disable()
+            self.switch_mediator_app.disable()
+            self.switch_gardener_app.disable()
+        elif self.the_cat.status == "hunter":
+            if leader_invalid:
+                self.promote_leader.enable()
+            else:
+                self.promote_leader.disable()
+
+            if deputy_invalid:
+                self.promote_deputy.enable()
+            else:
+                self.promote_deputy.disable()
+
+            self.switch_warrior.enable()
+            self.switch_med_cat.enable()
+            self.switch_mediator.enable()
+            self.switch_gardener.enable()
+            self.switch_scout.enable()
+            self.switch_guard.enable()
+            self.switch_hunter.disable()
+            self.switch_builder.enable()
+            self.switch_merchant.enable()
+            self.retire.enable()
+
+            # In-TRAINING ROLES:
+            self.switch_med_app.disable()
+            self.switch_warrior_app.disable()
+            self.switch_mediator_app.disable()
+            self.switch_gardener_app.disable()
+        elif self.the_cat.status == "builder":
+            if leader_invalid:
+                self.promote_leader.enable()
+            else:
+                self.promote_leader.disable()
+
+            if deputy_invalid:
+                self.promote_deputy.enable()
+            else:
+                self.promote_deputy.disable()
+
+            self.switch_warrior.enable()
+            self.switch_med_cat.enable()
+            self.switch_mediator.enable()
+            self.switch_gardener.enable()
+            self.switch_scout.enable()
+            self.switch_guard.enable()
+            self.switch_hunter.enable()
+            self.switch_builder.disable()
+            self.switch_merchant.enable()
+            self.retire.enable()
+
+            # In-TRAINING ROLES:
+            self.switch_med_app.disable()
+            self.switch_warrior_app.disable()
+            self.switch_mediator_app.disable()
+            self.switch_gardener_app.disable()
+        elif self.the_cat.status == "merchant":
+            if leader_invalid:
+                self.promote_leader.enable()
+            else:
+                self.promote_leader.disable()
+
+            if deputy_invalid:
+                self.promote_deputy.enable()
+            else:
+                self.promote_deputy.disable()
+
+            self.switch_warrior.enable()
+            self.switch_med_cat.enable()
+            self.switch_mediator.enable()
+            self.switch_gardener.enable()
+            self.switch_scout.enable()
+            self.switch_guard.enable()
+            self.switch_hunter.enable()
+            self.switch_builder.enable()
+            self.switch_merchant.disable()
             self.retire.enable()
 
             # In-TRAINING ROLES:
