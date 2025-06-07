@@ -850,7 +850,7 @@ class Pelt:
         """
             
     def init_pattern(self):
-        """
+        
         if self.name in Pelt.torties:
             if not self.tortiebase:
                 self.tortiebase = choice(Pelt.tortiebases)
@@ -907,7 +907,7 @@ class Pelt:
             self.tortiepattern = None
             self.tortiecolour = None
             self.pattern = None
-        """
+        
 
     def white_patches_inheritance(self, parents: tuple):
 
