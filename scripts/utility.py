@@ -991,6 +991,7 @@ def create_new_cat(
         # Note - we always update inheritance after the cats are generated, to
         # allow us to add parents.
         # new_cat.create_inheritance_new_cat()
+        new_cat.add_posture()
 
     return created_cats
 

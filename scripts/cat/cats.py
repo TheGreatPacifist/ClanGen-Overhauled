@@ -206,6 +206,7 @@ class Cat:
         self.permanent_condition = {}
         self.df = False
         self.experience_level = None
+        self.posture = ""
 
         # Various behavior toggles
         self.no_kits = False
@@ -433,6 +434,7 @@ class Cat:
 
         # Personality
         self.personality = Personality(kit_trait=self.age.is_baby())
+        self.posture = self.add_posture()
 
         # experience and current patrol status
         if self.age.is_baby():
@@ -2274,6 +2276,16 @@ class Cat:
                 f"WARNING: There was an error reading the condition file of cat #{self}.\n",
                 e,
             )
+    
+    def add_posture(self):
+        import json
+        postures = []
+        with open("resources/dicts/postures.json", "r") as file:
+            postures = json.load(file)
+        
+        posture = choice(postures["posture"])
+        self.posture = posture
+        return posture
 
     # ---------------------------------------------------------------------------- #
     #                                    mentor                                    #
@@ -3389,7 +3401,7 @@ class Cat:
                 i18n.t("general.moons_age", count=self.moons),
                 i18n.t(f"general.{self.status.lower()}", count=1),
                 self.genderalign,
-                i18n.t(f"cat.personality.{self.personality.trait}"),
+                i18n.t(f"cat.personality.{self.personality.trait}")
             ]
         )
 
@@ -3437,6 +3449,7 @@ class Cat:
                 "previous_mates": self.previous_mates,
                 "dead": self.dead,
                 "paralyzed": self.pelt.paralyzed,
+                "posture": self.posture,
                 "no_kits": self.no_kits,
                 "no_retire": self.no_retire,
                 "no_mates": self.no_mates,
@@ -3549,6 +3562,8 @@ def create_cat(status, moons=None, biome=None):
         "NORIGHTEAR",
         "MANLEG",
     ]
+
+    new_cat.posture = new_cat.add_posture()
 
     for scar in new_cat.pelt.scars:
         if scar in not_allowed_scars:

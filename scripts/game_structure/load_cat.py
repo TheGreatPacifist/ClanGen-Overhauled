@@ -134,6 +134,8 @@ def json_load():
                 opacity=cat["opacity"] if "opacity" in cat else 100,
             )
 
+            new_cat.posture = cat["posture"]
+
             # Runs a bunch of apperence-related convertion of old stuff.
             new_cat.pelt.check_and_convert(convert)
 

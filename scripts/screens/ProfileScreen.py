@@ -881,6 +881,11 @@ class ProfileScreen(Screens):
         # NEWLINE ----------
         output += "\n"
 
+        # POSTURE
+        output += i18n.t(f"cat.postures.{the_cat.posture}")
+        # NEWLINE ----------
+        output += "\n"
+
         # EXPERIENCE
         output += i18n.t(
             "screens.profile.experience_label", exp=the_cat.experience_level
