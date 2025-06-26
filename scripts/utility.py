@@ -788,7 +788,7 @@ def create_new_cat(
             age = 0
         elif litter or kit:
             age = randint(1, 5)
-        elif status in ("apprentice", "medicine cat apprentice", "mediator apprentice"):
+        elif status in ("apprentice", "medicine cat apprentice", "mediator apprentice", "gardener apprentice"):
             age = randint(6, 11)
         elif status == "warrior":
             age = randint(23, 120)
@@ -2659,17 +2659,17 @@ def generate_sprite(
             and game.config["cat_sprites"]["sick_sprites"]
     ):
         if age in ["kitten", "adolescent"]:
-            cat_sprite = str(19)
+            cat_sprite = str(37)
         else:
-            cat_sprite = str(18)
+            cat_sprite = str(36)
     elif cat.pelt.paralyzed and age != "newborn":
         if age in ["kitten", "adolescent"]:
-            cat_sprite = str(17)
+            cat_sprite = str(32)
         else:
             if cat.pelt.length == "long":
-                cat_sprite = str(16)
+                cat_sprite = str(31)
             else:
-                cat_sprite = str(15)
+                cat_sprite = str(30)
     else:
         if age == "elder" and not game.config["fun"]["all_cats_are_newborn"]:
             age = "senior"
@@ -2705,6 +2705,7 @@ def generate_sprite(
             else:
                 tortie_pattern = cat.pelt.tortiepattern
 
+            """
             patches = sprites.sprites[
                 tortie_pattern + cat.pelt.tortiecolour + cat_sprite
                 ].copy()
@@ -2716,6 +2717,7 @@ def generate_sprite(
 
             # Add patches onto cat.
             new_sprite.blit(patches, (0, 0))
+            """
 
         # TINTS
         if (
@@ -2760,6 +2762,30 @@ def generate_sprite(
 
             new_sprite.blit(white_patches, (0, 0))
 
+        # draw dark patches
+        if cat.pelt.dark_patches is not None:
+            dark_patches = sprites.sprites[
+                "dark" + cat.pelt.dark_patches + cat_sprite
+                ].copy()
+
+            # Apply tint to dark patches.
+            if (
+                    cat.pelt.dark_patches_tint != "none"
+                    and cat.pelt.dark_patches_tint
+                    in sprites.dark_patches_tint["tint_colours"]
+            ):
+                dark_tint = pygame.Surface((sprites.size, sprites.size)).convert_alpha()
+                dark_tint.fill(
+                    tuple(
+                        sprites.dark_patches_tint["tint_colours"][
+                            cat.pelt.dark_patches_tint
+                        ]
+                    )
+                )
+                dark_patches.blit(dark_tint, (0, 0), special_flags=pygame.BLEND_RGB_MULT)
+
+            new_sprite.blit(dark_patches, (0, 0))
+
         # draw vit & points
 
         if cat.pelt.points:
@@ -2784,6 +2810,24 @@ def generate_sprite(
             new_sprite.blit(
                 sprites.sprites["white" + cat.pelt.vitiligo + cat_sprite], (0, 0)
             )
+
+        if cat.pelt.dark_points:
+            dark_points = sprites.sprites["dark" + cat.pelt.dark_points + cat_sprite].copy()
+            if (
+                    cat.pelt.dark_patches_tint != "none"
+                    and cat.pelt.dark_patches_tint
+                    in sprites.dark_patches_tint["tint_colours"]
+            ):
+                dark_point_tint = pygame.Surface((sprites.size, sprites.size)).convert_alpha()
+                dark_point_tint.fill(
+                    tuple(
+                        sprites.dark_patches_tint["tint_colours"][
+                            cat.pelt.dark_patches_tint
+                        ]
+                    )
+                )
+                dark_points.blit(dark_point_tint, (0, 0), special_flags=pygame.BLEND_RGB_MULT)
+            new_sprite.blit(dark_points, (0, 0))
 
         # draw eyes & scars1
         eyes = sprites.sprites["eyes" + cat.pelt.eye_colour + cat_sprite].copy()

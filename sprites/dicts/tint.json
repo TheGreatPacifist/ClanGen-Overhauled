@@ -1,7 +1,7 @@
 {
   "colour_groups":
   {
-    "WHITE": "white",
+    "WHITE": "monochrome",
     "PALEGREY": "cool",
     "SILVER": "cool",
     "GREY": "monochrome",
@@ -13,25 +13,23 @@
     "GOLDEN": "warm",
     "GINGER": "warm",
     "DARKGINGER": "warm",
-    "SIENNA": "brown",
-    "LIGHTBROWN": "brown",
-    "LILAC": "brown",
-    "BROWN": "brown",
-    "GOLDEN-BROWN": "brown",
-    "DARKBROWN": "brown",
-    "CHOCOLATE": "brown"
+    "SIENNA": "warm",
+    "LIGHTBROWN": "warm",
+    "LILAC": "warm",
+    "BROWN": "warm",
+    "GOLDEN-BROWN": "warm",
+    "DARKBROWN": "warm",
+    "CHOCOLATE": "warm"
   },
   "possible_tints": {
-    "basic": ["pink", "gray", "red", "orange", "none", "warmdilute"],
-    "warm": ["yellow", "purple", "dilute", "cooldilute"],
-    "cool": ["purple", "black", "dilute"],
-    "white": ["yellow"],
-    "monochrome": ["blue", "black", "dilute", "cooldilute"],
-    "brown": ["yellow", "purple", "black", "dilute", "cooldilute"]
+    "basic": ["red", "orange", "yellow", "green", "blue", "purple"],
+    "warm": ["red", "orange", "yellow", "warmdilute"],
+    "cool": ["green", "cyan", "blue", "cooldilute"],
+    "monochrome": ["black", "grey", "dilute"]
   },
   "tint_colours":
   {
-    "pink": [253, 237, 237],
+    "pink": [250, 245, 245],
     "gray": [225, 225, 225],
     "red": [248, 226, 228],
     "black": [195, 195, 195],
@@ -39,6 +37,8 @@
     "yellow": [250, 248, 225],
     "purple": [235, 225, 244],
     "blue": [218, 237, 245],
+    "green": [235, 252, 238],
+    "cyan": [235, 252, 247],
     "none": null
   },
   "dilute_tint_colours":

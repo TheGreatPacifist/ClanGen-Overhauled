@@ -3440,9 +3440,12 @@ class Cat:
                 "eye_colour2": (self.pelt.eye_colour2 or None),
                 "reverse": self.pelt.reverse,
                 "white_patches": self.pelt.white_patches,
+                "dark_patches": self.pelt.dark_patches,
                 "vitiligo": self.pelt.vitiligo,
                 "points": self.pelt.points,
+                "dark_points": self.pelt.dark_points,
                 "white_patches_tint": self.pelt.white_patches_tint,
+                "dark_patches_tint": self.pelt.dark_patches_tint,
                 "pattern": self.pelt.pattern,
                 "tortie_base": self.pelt.tortiebase,
                 "tortie_color": self.pelt.tortiecolour,
@@ -3521,24 +3524,6 @@ def create_cat(status, moons=None, biome=None):
         new_cat.moons = randint(120, 155)
     elif new_cat.moons == 0:
         new_cat.moons = randint(1, 5)
-
-    not_allowed_scars = [
-        "NOPAW",
-        "NOTAIL",
-        "HALFTAIL",
-        "NOEAR",
-        "BOTHBLIND",
-        "RIGHTBLIND",
-        "LEFTBLIND",
-        "BRIGHTHEART",
-        "NOLEFTEAR",
-        "NORIGHTEAR",
-        "MANLEG",
-    ]
-
-    for scar in new_cat.pelt.scars:
-        if scar in not_allowed_scars:
-            new_cat.pelt.scars.remove(scar)
 
     return new_cat
 
