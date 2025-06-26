@@ -380,7 +380,6 @@ class ProfileScreen(Screens):
     def screen_switches(self):
         super().screen_switches()
         self.the_cat = Cat.all_cats.get(game.switches["cat"])
-        print(self.the_cat.sprite)
 
         # Set up the menu buttons, which appear on all cat profile images.
         self.next_cat_button = UISurfaceImageButton(
